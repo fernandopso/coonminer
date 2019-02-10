@@ -1,0 +1,4 @@
+- if token.enable
+  = link_to t("delete"), token_path(token.uuid), method: :delete, class: "btn btn-xs btn-danger", data: { disable_with: t("wait") }
+- else
+  = link_to t("restore"), token_path(token.uuid), method: :delete, class: "btn btn-xs btn-success", data: { disable_with: t("wait") }

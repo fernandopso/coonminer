@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{ content: 'width=device-width', name: 'viewport' }
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %meta{ content: (@token.present? ? t('description_for_token', token: @token.word) : t('description')), name: 'description' }
+    %meta{ content: (@token.present? ? t('keywords_for_token', token: @token.word) : t('keywords')), name: 'keywords' }
+    %title= @token.present? ? t('title_for_token', token: @token.word) : t('title')
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'https://www.gstatic.com/charts/loader.js'
+    = csrf_meta_tags
+  %body
+    .container-fluid.margin-header
+      = render partial: 'layouts/navbar'
+      = render partial: 'layouts/menu' if @token.present?
+      = yield :header
+      = render partial: 'layouts/notice_alert_message', locals: { message: notice || alert }
+      = yield
+    = render partial: 'layouts/modal/newsletter', locals: { token: @token }
+    = render partial: 'layouts/footer'
+    = javascript_include_tag 'https://platform.twitter.com/widgets.js'
+    = render partial: 'layouts/google_analytics'

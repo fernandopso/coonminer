@@ -1,0 +1,48 @@
+en:
+  activerecord:
+    models:
+      token: Tokens
+    attributes:
+      token:
+        accuracy: Accuracy
+        amount_tweets: Quantidade de Tweets
+        df: Frequência
+        frequency: Frequência
+        keep_cron_crawler: Status da Coleta
+        lang: Filtro de Idiomas
+        public: Público
+        uuid: UUID
+        word: Palavra
+        collect_at: Últida Coleta
+        created_at: Começou a Monitorar
+        category: Categoria
+        publish_at: Publicado em
+        svm_rated_at: SVM em
+        tf_idf_at: TF-IDF em
+        updated_at: Atualização
+
+  tokens:
+    new: Nova Monitoração
+    all: Todas Monitorações
+    filter_by_status: Status
+    filter_by_publish: Publicado no Twitter
+
+    keep_cron_crawler: Iniciar coleta
+    stop_cron_crawler: Pausar coleta
+
+    label_for_percent: "%{count}% %{rate}"
+    label_percent: "%{count_positive}% %{rate_positive} | %{count_neutral}% %{rate_neutral} | %{count_negative}% %{rate_negative}"
+
+    charts:
+      rated_by_user: Classificação publica
+      rated_by_svm: CoonMiner
+
+    accuracy:
+      title: Acurácia
+      rated: Classificados
+      validade: Verificados
+
+    show:
+      rated_by_user: Classificado pelo Administrador
+      rated_by_svm: Classificado pelo Coon Miner
+      tweets_to_delete: Tweets Antigos

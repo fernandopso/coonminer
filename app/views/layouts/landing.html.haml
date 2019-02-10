@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{ content: 'width=device-width', name: 'viewport' }
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %meta{ content: t('description'), name: 'description' }
+    %meta{ content: t('keywords'), name: 'keywords' }
+    %title= t('title')
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'landing'
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      = yield
+      = render partial: 'layouts/footer'
+    #newsletter
+    = javascript_include_tag 'https://platform.twitter.com/widgets.js'
+    = render partial: 'layouts/google_analytics'

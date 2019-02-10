@@ -1,0 +1,22 @@
+= content_for :header do
+  .container-header
+    %strong= t("tokens.new")
+
+.row
+  .col-sm-6
+    .panel.panel-default
+      .panel-body
+        = render 'form'
+
+  .col-sm-6
+    .alert.alert-success-alt
+      %strong= t("alerts.new_token.title")
+      %ul{ style: "margin-top: 10px" }
+        %li= t("alerts.new_token.li_hashtag")
+        %li= t("alerts.new_token.li_ambiguous")
+        %li= t("alerts.new_token.li_case")
+        %li= t("alerts.new_token.li_accent")
+
+    .alert.alert-danger-alt
+      %strong= t("attention")
+      = t("alerts.new_token.unedited")

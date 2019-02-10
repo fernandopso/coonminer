@@ -1,0 +1,15 @@
+.panel.panel-default
+  .panel-body
+    .row.text-center
+      %h4
+        = Word.human_attribute_name(:banned)
+
+    %br
+    .col-xs-12{ id: 'banned_words' }
+      - if banneds.any?
+        - banneds.each do |word|
+          %kbd= word.name
+
+    .col-xs-12.text-center
+      %br
+      = link_to t('edit'), banneds_token_words_path(token.uuid), class: 'btn btn-default btn-block'

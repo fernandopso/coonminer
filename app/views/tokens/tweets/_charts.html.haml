@@ -1,0 +1,7 @@
+.progress
+  .progress-bar.progress-bar-success{ style: "width: #{token.statistics.percent_positive}%", title: title_for_token(token) }
+    = t("tokens.label_for_percent", count: token.statistics.percent_positive, rate: t("positive"))
+  .progress-bar.progress-bar-neutral{ style: "width: #{token.statistics.percent_neutral}%", title: title_for_token(token) }
+    = t("tokens.label_for_percent", count: token.statistics.percent_neutral, rate: t("neutral"))
+  .progress-bar.progress-bar-danger{ style: "width: #{token.statistics.percent_negative}%", title: title_for_token(token) }
+    = t("tokens.label_for_percent", count: token.statistics.percent_negative, rate: t("negative"))

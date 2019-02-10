@@ -1,0 +1,36 @@
+- if links.any?
+  - links.each do |link|
+    = form_for link, url: ban_token_link_path(params[:token_id], link.id), remote: true do |f|
+      .panel.panel-default.xs-link-padding{ id: "link_#{link.id}" }
+        .panel-body.xs-panel.link-xs
+          %h5
+            %a{ href: link.href, target: :blank }= raw link.human_title
+          .small.text-muted= link.href
+
+          %hr
+            .row.small
+              .col-xs-6.col-sm-3
+                = succeed ':' do
+                  %b= Token.human_attribute_name(:df)
+                = link.df
+              .col-xs-6.col-sm-4
+                = succeed ':' do
+                  %b= Token.human_attribute_name(:updated_at)
+                = link.updated_at
+              - if current_user.present? and current_user.admin?
+                .col-xs-12.col-sm-5
+                  .col-xs-8
+                    .glyphicon{ class: "glyphicon-#{ 'ok' if link.publish_at.present? }" }
+                  .col-xs-4
+                    = f.submit t('delete'), class: 'btn btn-xs btn-default', data: { disable_with: t('wait') }
+
+- else
+  .panel.panel-default.xs-padding
+    .panel-body.text-center.xs-panel
+      = t("alerts.zero_links")
+
+.row
+  .col-xs-12
+    .text-center
+      .digg_pagination
+        = will_paginate links

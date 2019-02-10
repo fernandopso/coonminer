@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      contact: Contato
+    attributes:
+      contact:
+        name: Nome
+        email: E-mail
+        message: Mensagem
+
+  contacts:
+    send: Enviar

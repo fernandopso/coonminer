@@ -1,0 +1,12 @@
+= content_for :header do
+  .container-header
+    %b= t('collect.title')
+
+- if @token.company.free?
+  .alert.bg-info= t('alerts.free_account_collect_html')
+
+= render partial: 'header', locals: { token: @token }
+
+= render partial: 'edit_language', locals: { token: @token }
+
+= render partial: 'tokens/delete', locals: { token: @token }

@@ -1,0 +1,15 @@
+= content_for :header do
+  .container-header
+    %strong= Token.model_name.human
+
+- if @tokens.any?
+  = render partial: "listing", locals: { tokens: @tokens }
+- else
+  .text-center
+    %h3= t("welcome")
+    %br
+    %h4= t("alerts.first_token")
+    %br
+
+.text-center
+  = link_to t("tokens.new"), new_token_path, class: "btn btn-tw btn-lg btn-default"

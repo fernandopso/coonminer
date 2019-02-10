@@ -1,0 +1,22 @@
+%h1 Listing categories
+
+%table
+  %thead
+    %tr
+      %th Titulo
+      %th Slug
+      %th
+
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.title
+        %td= category.slug
+        %td
+          = link_to t('show'), category, class: 'btn btn-default'
+          = link_to t('edit'), edit_category_path(category), class: 'btn btn-default'
+          = link_to t('destroy'), category, method: :delete, class: 'btn btn-default', data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Category', new_category_path

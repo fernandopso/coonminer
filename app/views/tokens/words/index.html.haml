@@ -1,0 +1,15 @@
+= content_for :header do
+  .container-header
+    %b= t('words.index')
+
+.row
+  .col-xs-12.col-sm-6
+    = render partial: 'words', locals: { words: @words }
+
+  .col-xs-12.col-sm-6
+    = render partial: 'banneds', locals: { banneds: @banneds, token: @token }
+
+.row
+  .text-center
+    .digg_pagination
+      = will_paginate @words

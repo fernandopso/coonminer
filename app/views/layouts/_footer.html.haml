@@ -1,0 +1,9 @@
+.col-xs-12.landing_color.footer
+  %ul.list-inline{ style: 'margin-left: 15px;' }
+    - if controller_name != 'home'
+      %li= link_to 'Home', root_path_tag
+      %li.footer-menu-divider &sdot;
+    %li= link_to 'Política de Privacidade', privacy_index_path
+    %li.footer-menu-divider &sdot;
+    %li= link_to 'Contato', new_contact_path
+  %p.copyright.text-muted.small{ style: 'margin-left: 20px;' } Coon Miner &copy; 2018

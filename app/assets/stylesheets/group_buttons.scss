@@ -1,0 +1,102 @@
+.ui-group-buttons .or
+{
+	float: left;
+	font-size: 12px;
+	height: 1.3em;
+	position: relative;
+	width: .3em;
+	z-index: 3;
+}
+.ui-group-buttons .or:before
+{
+	background-color: #5a5a5a;
+	border-radius: 500px;
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+	box-sizing: border-box;
+	color: #fff;
+	content: 'ou';
+	font-style: normal;
+	font-weight: 400;
+	height: 1.8em;
+	left: 50%;
+	line-height: 1.55;
+	margin-left: -.9em;
+	margin-top: -.1em;
+	moz-box-sizing: border-box;
+	ms-box-sizing: border-box;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+	webkit-box-sizing: border-box;
+	width: 1.8em;
+}
+.ui-group-buttons .or:after
+{
+	background-color: rgba(0,0,0,0);
+	border-bottom: .6em solid #5a5a5a;
+	border-top: .6em solid #5a5a5a;
+	content: ' ';
+	height: 2.84em;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: .3em;
+}
+.ui-group-buttons .or.or-lg
+{
+	font-size: 16px;
+	height: 1.3em;
+}
+.ui-group-buttons .or.or-lg:after
+{
+	height: 2.85em;
+}
+.ui-group-buttons .or.or-sm
+{
+	height: 1em;
+}
+.ui-group-buttons .or.or-sm:after
+{
+	height: 2.5em;
+}
+.ui-group-buttons .or.or-xs
+{
+	height: .25em;
+}
+.ui-group-buttons .or.or-xs:after
+{
+	height: 1.84em;
+	z-index: -1000;
+}
+.ui-group-buttons
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.ui-group-buttons:after
+{
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.ui-group-buttons .btn
+{
+	border-radius: 0;
+	float: left;
+}
+.ui-group-buttons .btn:first-child
+{
+	border-bottom-left-radius: .25em;
+	border-top-left-radius: .25em;
+	margin-left: 0;
+	padding-right: 15px;
+}
+.ui-group-buttons .btn:last-child
+{
+	border-bottom-right-radius: .25em;
+	border-top-right-radius: .25em;
+	padding-left: 15px;
+}

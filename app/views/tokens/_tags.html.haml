@@ -1,0 +1,43 @@
+- number_of_tweets = token.tweets.count
+
+.col-md-12.text-center
+  = link_to token_mining_index_path(token.uuid), style: "border-color: #fff" do
+    %h3= token.word
+    .col-md-4.col-md-offset-4
+      .progress
+        .progress-bar.progress-bar-success.progress-bar-striped.active{:style => "width: #{number_of_tweets}%"}
+          %span.sr-only
+
+- unless number_of_tweets.zero?
+  #cloud{ data: load_data_to_cloud_tags(token) }
+
+  :javascript
+    var hashtags = $('#cloud').data('hashtags');
+    var locations = $('#cloud').data('locations');
+    var languages = $('#cloud').data('languages');
+    var mentions = $('#cloud').data('mentions');
+
+    $(function() {
+      $("#hashtags").jQCloud(hashtags);
+      $("#locations").jQCloud(locations);
+      $("#languages").jQCloud(languages);
+      $("#mentions").jQCloud(mentions);
+    });
+
+  .col-md-6
+    %div{ :id => "hashtags", :style => "width: 100%; height: 160px;"}
+  .col-md-6
+    %div{ :id => "mentions", :style => "width: 100%; height: 160px;"}
+  .col-md-6
+    %div{ :id => "locations", :style => "width: 100%; height: 160px;"}
+  .col-md-6
+    %div{ :id => "languages", :style => "width: 100%; height: 160px;"}
+
+  .row
+    %br
+    %br
+
+.row
+  %br
+  .col-md-4.col-md-offset-4
+    = render partial: 'layouts/newsletter', locals: { token: token }

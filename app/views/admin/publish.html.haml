@@ -1,0 +1,19 @@
+= render partial: "layouts/alerts/current_time"
+
+.panel.panel-default
+  .panel-body
+    = form_tag publish_admin_index_path, method: :get do
+      .col-sm-2
+        = select_tag :cron, options_for_boolean(params[:cron]), class: "form-control submitable", include_blank: Token.human_attribute_name(:keep_cron_crawler)
+      .col-sm-2
+        = select_tag :public, options_for_boolean(params[:public]), class: "form-control submitable", include_blank: Token.human_attribute_name(:public)
+      .col-sm-2
+        = select_tag :status, options_for_boolean(params[:status]), class: "form-control submitable", include_blank: t("tokens.filter_by_status")
+      .col-sm-2
+        = select_tag :publish, options_for_boolean(params[:publish]), class: "form-control submitable", include_blank: t("tokens.filter_by_publish")
+      .col-sm-2
+        = select_tag :category, options_for_select(options_for_categories, selected: params[:category]), class: "form-control submitable", include_blank: Token.human_attribute_name(:category)
+      .col-sm-2
+        = select_tag :order, options_order_tokens(params[:order]), class: "form-control submitable", include_blank: t("order")
+
+= render partial: "publish", locals: { tokens: @tokens }

@@ -1,0 +1,10 @@
+en:
+  time:
+    date_format: "MM/DD/YYYY"
+    formats:
+      default: "%a, %d %b %Y %I:%M:%S %p %Z"
+      long: "%B %d, %Y %I:%M %p"
+      only_date: "%B %d of %Y"
+      short: "%d %b %I:%M %p"
+      datepicker: "%m/%d/%Y"
+      ymd: "%Y/%m/%d"

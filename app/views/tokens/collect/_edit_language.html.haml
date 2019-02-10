@@ -1,0 +1,12 @@
+.panel.panel-default
+  .panel-body.text-center
+    .col-xs-12.col-sm-4.floating
+      %b{ style: "font-size: 19px" }= t("languages.#{token.lang}")
+      %p= Token.human_attribute_name(:lang)
+    .col-xs-12.col-sm-4
+      %br
+      #language_alert
+    .col-xs-12.col-sm-4
+      = form_for @token, url: language_token_path(@token.uuid), remote: true do |f|
+        %p
+        = f.select :lang, options_for_languages, {}, class: "form-control submitable"

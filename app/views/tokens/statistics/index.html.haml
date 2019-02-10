@@ -1,0 +1,7 @@
+- @token.statistics.as_json.slice(*StatisticsToken::ATTRS).each do |key, value|
+  .col-sm-2
+    .panel.panel-default
+      .panel-body.text-center.small
+        %h5
+          = key
+        = value.to_i

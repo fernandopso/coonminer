@@ -1,0 +1,20 @@
+%br
+
+.row
+  .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+    = render partial: 'home/sample'
+
+%br
+
+#tags
+
+.col-sm-3.col-xs-12
+  = render partial: 'categories', locals: { category: Category.first }
+.col-sm-9.col-xs-12
+  - Category.first.tokens.each do |token|
+    = render partial: 'stats', locals: { token: token }
+
+#submitable.hidden
+  = render partial: 'submitable_form_for_count'
+
+%br

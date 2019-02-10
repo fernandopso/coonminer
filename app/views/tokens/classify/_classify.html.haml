@@ -1,0 +1,6 @@
+- tweets.each do |tweet|
+  %row{ id: "tweet_#{tweet.id}" }
+    %blockquote.twitter-tweet
+      = tweet.text
+      %a{ href: tweet.url }
+    = render partial: 'form_classifier', locals: { tweet: tweet }

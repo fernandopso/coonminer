@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{ content: 'width=device-width', name: 'viewport' }
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %meta{ content: t('description'), name: 'description' }
+    %meta{ content: t('keywords'), name: 'keywords' }
+    %title= t('title')
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    .container-fluid.margin-header
+      = render 'layouts/navbar'
+      = yield :header
+      .col-sm-12.main
+        - if notice
+          %p.alert.bg-info= notice
+        - if alert
+          %p.alert.bg-info= alert
+        = yield
+    = javascript_include_tag 'https://platform.twitter.com/widgets.js'
+    = render partial: 'layouts/google_analytics'

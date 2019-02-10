@@ -1,0 +1,13 @@
+.panel.panel-default.xs-padding
+  .panel-body.xs-panel
+    - if mentions.any?
+      %table.table
+        %thead
+          %tr
+            %th
+            %th.small.text-center= Token.human_attribute_name(:frequency)
+        %tbody
+          - mentions.each do |mention|
+            %tr
+              %td= link_to mention.name, "https://twitter.com/#{mention.human_name}", target: :blank
+              %td.text-center= mention.df

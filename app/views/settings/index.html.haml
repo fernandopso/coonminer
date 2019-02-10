@@ -1,0 +1,10 @@
+%h4
+  %b Privacy
+
+%br
+
+= form_for Contact.new do |f|
+  = f.hidden_field :name, value: current_user.username_or_email
+  = f.hidden_field :email, value: current_user.username
+  = f.hidden_field :message, value: "Block Account"
+  = f.submit "Protect my Tweets", class: "btn btn-lg btn-default", data: { disable_with: t("wait") }

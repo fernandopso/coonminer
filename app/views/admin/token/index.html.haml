@@ -1,0 +1,12 @@
+= render partial: "layouts/alerts/current_time"
+
+.panel.panel-default
+  .panel-body
+    = form_tag token_index_path, method: :get do
+      .row
+        .col-sm-6
+          = select_tag :status, options_for_boolean(params[:status]), class: "form-control submitable", include_blank: t("tokens.filter_by_status")
+        .col-sm-6
+          = select_tag :cron, options_for_boolean(params[:cron]), class: "form-control submitable", include_blank: Token.human_attribute_name(:keep_cron_crawler)
+
+= render partial: 'listing', locals: { tokens: @tokens }

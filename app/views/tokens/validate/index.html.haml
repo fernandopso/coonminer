@@ -1,0 +1,15 @@
+= content_for :header do
+  .container-header
+    %b= t('validate.title')
+
+- if @tweets.empty? && params[:utf8].nil?
+  .alert.bg-info= t('alerts.required_classify', min_rate: Svm::Rate::MIN_TWEETS_RATED)
+- else
+  .row
+    .col-sm-5
+      = render partial: 'filter', locals: { token: @token }
+    .col-sm-7
+      = render partial: 'header', locals: { token: @token }
+
+  .row
+    = render partial: 'tweets', locals: { tweets: @tweets, token: @token }

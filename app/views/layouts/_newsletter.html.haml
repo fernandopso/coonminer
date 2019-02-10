@@ -1,0 +1,11 @@
+.thumbnail.center.well.well-small.text-center
+  #newsletter-content
+    %h3= t('landing.newsletter.subtitle', word: token.word)
+    = form_for Newsletter.new, remote: true do |f|
+      = f.hidden_field :token_id, value: token.id
+      .input-prepend
+        %span.add-on
+          %i.icon-envelope
+        = f.text_field :email, { class: 'form-control', placeholder: 'seu@email.com' }
+      %br
+      = f.submit t('landing.newsletter.create'), class: 'btn btn-large', data: { disable_with: t('wait') }

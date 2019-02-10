@@ -1,0 +1,21 @@
+en:
+  landing:
+    title: Monitoração em tempo real no Twitter
+    tokens: Pré candidatos a presidência do Brasil
+    subtitle: "%{amount} tweets analisados sobre %{token}"
+    how_classify: "Como você classifica o tweet sobre %{token}?"
+    search: Buscar
+
+    newsletter:
+      subtitle: Receba análises por email sobre %{word}
+      create: Inscrever
+
+    answer:
+      negative: Não apoia
+      neutral: Não expressa opinião
+      positive: Apoia
+
+    details:
+      positive: "%{amout} positivo"
+      neutral: "%{amout} neutro"
+      negative: "%{amout} negativo"

@@ -1,0 +1,29 @@
+.row
+  %h2.section-heading= t("about.title")
+  %p.lead
+
+.panel.panel-default
+  .panel-body
+    .col-xs-12.col-sm-8.floating
+      %b= t("process.tf_idf")
+      = t("divider")
+      = book_iir_tag("tf_idf")
+
+.panel.panel-default
+  .panel-body
+    = book_iir_tag("vocabulary")
+
+    %p
+    %ul
+      %li
+        %b= t("process.normalization")
+        = t("divider")
+        = book_iir_tag("normalization")
+      %li
+        %b= t("process.tokenization")
+        = t("divider")
+        = book_iir_tag("tokenization")
+      %li
+        %b= t("process.stop_words")
+        = t("divider")
+        = book_iir_tag("stop_words")

@@ -1,0 +1,90 @@
+:javascript
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ["Element", "#{Tweet.model_name.human}", { role: "style" } ],
+      #{raw @user_positive},
+      #{raw @user_neutral},
+      #{raw @user_negative}
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+
+    var options = {
+      title: "#{t("tokens.charts.rated_by_user", count: @token.statistics.user_rated)}",
+      height: 300,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById("user_chart"));
+    chart.draw(view, options);
+
+    var chart = new google.visualization.BarChart(document.getElementById("user_chart_xs"));
+    chart.draw(view, options);
+
+    // -----------
+
+    var data = google.visualization.arrayToDataTable([
+      ["Element", "#{Tweet.model_name.human}", { role: "style" } ],
+      #{raw @svm_positive},
+      #{raw @svm_neutral},
+      #{raw @svm_negative}
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+
+    var options = {
+      title: "#{t("tokens.charts.rated_by_svm", count: @token.statistics.svm_rated)}",
+      height: 300,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById("svm_chart"));
+    chart.draw(view, options);
+
+    var chart = new google.visualization.BarChart(document.getElementById("svm_chart_xs"));
+    chart.draw(view, options);
+
+    // -----------
+
+    var data = google.visualization.arrayToDataTable([
+      ["Element", "#{Tweet.model_name.human}", { role: "style" } ],
+      #{raw @last_3_hours},
+      #{raw @last_12_hours},
+      #{raw @last_24_hours},
+      #{raw @last_3_days},
+      #{raw @last_7_days}
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+
+    var options = {
+      height: 300,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById("time_bar"));
+    chart.draw(view, options);
+  }

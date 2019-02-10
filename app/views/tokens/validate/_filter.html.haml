@@ -1,0 +1,20 @@
+.row
+  .col-sm-7
+    .panel.panel-default
+      .panel-body
+        %p
+        = form_tag token_validate_index_path, method: :get do
+          = select_tag :rate, options_for_rate_of_tweets_rated(params[:rate]), class: 'form-control submitable', include_blank: t('filter.svm')
+        %p.filter-fix-style
+  .col-sm-5
+    .panel.panel-default
+      .panel-body.text-center
+        .row
+          %h5#tweets_count
+            = token.statistics.user_rated
+            = t('slash')
+            = token.statistics.svm_rated
+          .small
+            = t('rate.rated')
+            = t('slash')
+            = t('rate.rated_by_svm')

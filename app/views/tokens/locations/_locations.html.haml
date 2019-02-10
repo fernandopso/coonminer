@@ -1,0 +1,13 @@
+.panel.panel-default.xs-padding
+  .panel-body.xs-panel
+    - if locations.any?
+      %table.table
+        %thead
+          %tr
+            %th.small.text-center= Token.human_attribute_name(:frequency)
+            %th
+        %tbody
+          - locations.each do |location|
+            %tr
+              %td.text-center= location.df
+              %td= location.name

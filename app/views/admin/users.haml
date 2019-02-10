@@ -1,0 +1,19 @@
+- if @users.any?
+  %table.table
+    %thead
+      %tr
+        %th email
+        %th sign_in_count
+        %th current_sign_in_at
+        %th last_sign_in_at
+        %th created_at
+        %th tokens
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.username_or_email
+          %td= user.sign_in_count
+          %td= l(user.current_sign_in_at)
+          %td= l(user.last_sign_in_at)
+          %td= l(user.created_at)
+          %td= user.tokens.size

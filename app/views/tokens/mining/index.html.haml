@@ -1,0 +1,8 @@
+.text-center
+  #tags= render partial: 'tags', locals: { token: @token }
+
+.col-xs-12
+  %hr
+
+.col-xs-12
+  = render(partial: 'tweet_to_classify', locals: { tweet: @tweet, token: @token }) if @tweet

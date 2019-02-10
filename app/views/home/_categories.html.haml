@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-body
+    %h3.text-center= category.title
+    - category.tokens.includes(:statistics).active.each do |token|
+      = link_to token_mining_index_path(token.uuid), style: "border-color: #fff", class: "display-stats-on-hover", id: token.uuid do
+        .row
+          %br
+          .col-xs-3.brightness-category-item{ id: "category-home-item-#{token.uuid}" }
+            %img{ src: token.avatar, class: 'img-circle' }
+          .col-xs-9
+            %h5
+              %b= token.word
+              %small= "(@#{token.username})" if token.username.present?
+            %p
+              - if token.statistics.amount_rated.to_i.nonzero?
+                = render partial: 'progress_bar', locals: { token: token }
+                = render partial: 'details', locals: { token: token }
+              - else
+                = t('statistics.last_7_days', amount: token.statistics.last_7_days)

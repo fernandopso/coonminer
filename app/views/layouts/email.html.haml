@@ -1,0 +1,41 @@
+%table{:align => "center", :bgcolor => "#f2f2f2", :border => "0", :cellpadding => "0", :cellspacing => "0", :height => "100% !important", :style => "border-collapse:collapse!important;background-color:#f2f2f2;font-family:sans-serif;height:100%!important;margin:0;padding:0;width:100%!important", :width => "100% !important"}
+  %tbody
+    %tr
+      %td{:align => "center", :height => "100% !important", :style => "height:100%!important;margin:0;padding:0;width:100%!important", :valign => "top", :width => "100% !important"}
+        %table{:bgcolor => "#ffffff", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "border-collapse:collapse!important;width:600px;background-color:#ffffff", :width => "600"}
+          %tbody
+            %tr
+              %td{:align => "center", :bgcolor => "#f2f2f2;", :style => "padding: 20px 20px 15px 20px; background-color:#f2f2f2", :valign => "top"}
+                %table{:bgcolor => "#ffffff", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "border-collapse:separate!important;background-color:#ffffff;padding:40px 30px 10px 30px;border:1px solid #cccccc;border-bottom:1px solid #acacac", :width => "100%"}
+                  %tbody
+                    %tr
+                      %td{:align => "left", :colspan => "12", :style => "color:#444444;font-family:sans-serif;font-size:15px;line-height:150%;text-align:left", :valign => "top", :width => "100%"}
+                        %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :style => "border-collapse:collapse!important", :width => "100%"}
+                          %tbody
+                            %tr
+                              %td{:colspan => "12", :style => "color:#444444;font-family:sans-serif;font-size:14px;line-height:150%;", :valign => "top", :width => "100%"}
+                                = yield
+                                %br
+                                %br
+                                %span{:color => "#444444", :face => "sans-serif", :style => "margin:0 1.1em; color:#666666;font-family:sans-serif; font-size: 12px"}
+                                  %b= t("title")
+                                  %br
+                                  %a{:href => "http://coonminer.com/", :target => "_blank"} http://coonminer.com/
+                    %tr
+                      %td{:align => "left", :colspan => "12", :style => "color:#444444;font-family:sans-serif;font-size:15px;line-height:150%;text-align:left", :valign => "top", :width => "100%"}
+                        %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :style => "border-collapse:collapse!important", :width => "100%"}
+                          %tbody
+                            %tr
+                              %td{:align => "left", :colspan => "12", :style => "text-align:left;font-family:sans-serif;font-size:15px;line-height:1.5em;color:#444444", :valign => "top", :width => "100.0%"}
+                                %div{:style => "padding:10px 0px 0px 0px;text-align:right"}
+                                  %div
+                                    %div{:style => "color:inherit;font-size:inherit;line-height:inherit;margin:inherit;padding:inherit"}
+                    %tr
+                      %td{:align => "left", :colspan => "12", :style => "color:#444444;font-family:sans-serif;font-size:15px;line-height:150%;text-align:left", :valign => "top", :width => "100%"}
+                        %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :style => "border-collapse:collapse!important", :width => "100%"}
+                          %tbody
+                            %tr
+                              %td{:align => "left", :colspan => "12", :style => "text-align:left;font-family:sans-serif;font-size:15px;line-height:1.5em;color:#444444", :valign => "top", :width => "100.0%"}
+                                %div{:style => "padding:10px 0px 0px 0px;text-align:right"}
+                                  %div
+                                    %div{:style => "color:inherit;font-size:inherit;line-height:inherit;margin:inherit;padding:inherit"}

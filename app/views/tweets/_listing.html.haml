@@ -1,0 +1,33 @@
+.row
+  - tweets.each do |tweet|
+    .row
+      .col-xs-12
+        .col-xs-5
+          %blockquote.twitter-tweet
+            = tweet.text
+            %a{ href: tweet.url }
+
+          .panel.panel-default
+            .panel-body
+              .col-sm-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate)}" }
+                %b= rate_tag(tweet.rate)
+                %br
+                = t("rate.rated")
+
+              .col-sm-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate_svm)}" }
+                %b= rate_tag(tweet.rate_svm)
+                %br
+                = t("rate.rated_by_svm")
+
+        .col-xs-7
+          - if token.tf_idf_at.present?
+            = render partial: "tweets/bag_of_words", locals: { tweet: tweet }
+    .row
+      %br
+      %hr
+      %br
+
+.row
+  .text-center
+    .digg_pagination
+      = will_paginate tweets

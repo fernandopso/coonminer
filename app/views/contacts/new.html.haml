@@ -1,0 +1,32 @@
+.col-md-6.col-md-offset-3
+  = form_for @contact do |f|
+    %h3.text-center Contato
+    %br
+
+    .row
+      .col-sm-12
+        %h5= f.label :name
+      .col-sm-12
+        = f.text_field :name, class: "form-control", required: true
+
+    %br
+
+    .row
+      .col-sm-12
+        %h5= f.label :email
+      .col-sm-12
+        = f.email_field :email, class: "form-control", required: true
+
+    %br
+
+    .row
+      .col-sm-12
+        %h5= f.label :message
+      .col-sm-12
+        = f.text_area :message, class: "form-control", required: true, rows: 5
+
+    %br
+
+    .form-group
+      .col-md-4.col-sm-offset-4
+        = f.submit t('contacts.send'), class: "btn btn-primary btn-block", data: { disable_with: t("wait") }

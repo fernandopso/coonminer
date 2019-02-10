@@ -1,0 +1,13 @@
+.panel.panel-default
+  .panel-body.text-center
+    %h4
+      %b= token.word
+    = t('tweets.amount', count: token.statistics.amount)
+    %hr
+
+    %br
+    = render partial: 'mining/charts', locals: { token: token }
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3
+        %br
+        = link_to t('explore'), token_tweets_path(token.uuid), class: 'btn btn-default btn-block'

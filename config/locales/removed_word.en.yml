@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      removed_word: Tokens Removed
+    attributes:
+      removed_word:
+        words: Tokens Removed

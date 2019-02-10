@@ -1,0 +1,3 @@
+= render partial: 'tweets/filter', locals: { path: token_users_path(params[:token_id]) }
+%div{ style: 'margin-top: -15px' }
+= render partial: 'listing', locals: { users: @users }

@@ -1,0 +1,14 @@
+.cm-search-input .input-group-addon{
+    background: white !important;
+}
+.cm-search-input .form-control{
+    border-right:0;
+	box-shadow:0 0 0;
+    height: 50px;
+    font-size: 20px;
+	border-color:#ccc;
+}
+.cm-search-input button{
+    border:0;
+    background:transparent;
+}

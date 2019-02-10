@@ -1,0 +1,92 @@
+en:
+  title: CoonMiner
+  title_for_token: "%{token} no Twitter"
+  description: Machine learning and data mining for public tweets
+  description_for_token: "%{token} on Twitter - Machine learning and data mining for public tweets"
+  keywords: "twitter mining, tweets mining, data mining, machine learning"
+  keywords_for_token: "%{token}, twitter mining, tweets mining, data mining, machine learning"
+  username_as_twitter: "@%{username}"
+
+  active: Ativo
+  all_time: Tempo
+  all_rates: Classificação
+  all_langs: Idiomas
+  analytics: Análises
+  are_you_sure: Você tem certeza?
+  attention: Atenção!
+  ban: Remover
+  cancel: Cancelar
+  correct: Correto
+  create: Criar
+  disable: Desabilitar
+  disabled: Desabilitado
+  delete: Deletar
+  deleted: Deletado
+  home: Inicio
+  login: Login
+  logout: Sair
+  negative: Não
+  neutral: Não Sei
+  not_rated: Não classificado
+  make_public: Tornar público
+  make_private: Tornar privado
+  more: Mair
+  monitor: Monitorar
+  order: Order
+  others: Outros
+  overview: Resumo
+  process: Process
+  positive: Sim
+  rated: Classificado
+  recent: Recente
+  restore: Restaurar
+  remove: Remover
+  see: Ver
+  settings: Configurações
+  sign_in: Entrar
+  total: Total
+  twitter: Twitter
+  wait: Aguarde
+  wait_xs: Espere
+  welcome: Bem vindo
+  words: Palavras
+  wrong: Errado
+
+  divider: " - "
+  pipe: " | "
+  slash: " / "
+
+  user_validate: Validado pelo administrador
+
+  about:
+    title: Sobre
+
+  filter:
+    title: Filtrar
+    svm: CoonMiner Classificou
+    user: Filtrar por classificação do administrador
+    user_public: Classificação pública
+    tokens_active: Activated Tokens
+    tokens_disabled: Deleted Tokens
+
+  rate:
+    rated: User
+    rated_by_svm: Coon Miner
+    not_rated: Não classificado
+
+  process:
+    vocabulary: Vocabulary
+    normalization: Normalization
+    tokenization: Tokenization
+    tf_idf: TF-IDF
+    stop_words: Stop Words
+    bag_of_words: Process bag of words
+
+  collect:
+    title: Coleta
+
+  classify:
+    title: Clasificação
+
+  validate:
+    title: Validação

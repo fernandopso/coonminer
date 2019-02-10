@@ -1,0 +1,32 @@
+- tweets.each do |tweet|
+  %row{ id: "tweet_#{tweet.id}" }
+    .col-sm-5
+      %blockquote.twitter-tweet
+        = tweet.text
+        %a{ href: tweet.url }
+
+      .panel.panel-default
+        .panel-body
+          .col-xs-12
+            .row{ id: "validate_tweet_#{tweet.id}" }
+              .col-sm-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate_svm)}" }
+                %h5
+                  %b= t("landing.answer.#{tweet.rate_svm}")
+
+              .col-sm-6.text-center
+                .row{ style: "margin-left: 3px"}
+                  .ui-group-buttons
+                    = link_to t("correct"), token_validate_path(params[:token_id], tweet, validate_correct_params(tweet.rate_svm)), remote: true, method: :put, class: "btn btn-success", data: { disable_with: t("wait") }
+                    .or
+                    %a.btn.btn-danger.display-classify-form{ data: { id: tweet.id } }= t("wrong")
+            .row.text-center.hidden{ id: "wrong_validate_tweet_#{tweet.id}" }
+              = render partial: "wrong_classify", locals: { tweet: tweet, wrong_svm_rate: tweet.rate_svm, tweet: tweet }
+
+    .row
+      .col-xs-12
+        %hr
+
+.row
+  .text-center
+    .digg_pagination
+      = will_paginate tweets

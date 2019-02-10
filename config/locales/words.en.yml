@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      word: Words
+    attributes:
+      word:
+        name: Word
+        banned: Banned Words
+  words:
+    index: Words

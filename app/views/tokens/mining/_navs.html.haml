@@ -1,0 +1,3 @@
+- tokens.each do |token|
+  = link_to root_path(id: token.uuid) do
+    %img{ src: token.avatar, class: 'img-circle' }

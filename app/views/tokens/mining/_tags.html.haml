@@ -1,0 +1,30 @@
+#cloud{ data: load_data_to_cloud_tags(token) }
+
+:javascript
+  var hashtags = $('#cloud').data('hashtags');
+  var locations = $('#cloud').data('locations');
+  var languages = $('#cloud').data('languages');
+  var mentions = $('#cloud').data('mentions');
+
+  $(function() {
+    $("#hashtags").jQCloud(hashtags);
+    $("#locations").jQCloud(locations);
+    $("#languages").jQCloud(languages);
+    $("#mentions").jQCloud(mentions);
+  });
+
+.col-md-6
+  %div{ :id => "hashtags", :style => "width: 100%; height: 160px;"}
+.col-md-6
+  %div{ :id => "mentions", :style => "width: 100%; height: 160px;"}
+
+.col-md-12.text-center
+  = link_to token_tweets_path(token.uuid), style: "border-color: #fff" do
+    %img{ src: token.avatar, class: 'img-circle' }
+    %h4= t('username_as_twitter', username: token.username) if token.username && !token.username.blank?
+    %h5.small= t('landing.subtitle', amount: token.statistics.amount, token: token.word)
+
+.col-md-6
+  %div{ :id => "locations", :style => "width: 100%; height: 160px;"}
+.col-md-6
+  %div{ :id => "languages", :style => "width: 100%; height: 160px;"}

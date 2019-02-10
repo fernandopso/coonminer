@@ -1,0 +1,18 @@
+- if @contats.any?
+  - @contats.each do |contat|
+    .panel.panel-default
+      .panel-body
+        %b= Contact.human_attribute_name(:name)
+        = contat.name
+        %br
+        %b= Contact.human_attribute_name(:email)
+        = contat.email
+        %br
+        %b= Contact.human_attribute_name(:created_at)
+        = contat.created_at
+        %br
+        %br
+        %b= Contact.human_attribute_name(:message)
+        %br
+        = contat.message
+        %br

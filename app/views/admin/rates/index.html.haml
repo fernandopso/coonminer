@@ -1,0 +1,14 @@
+.col-xs-12
+  = link_to 'Sincronizar Avatares', update_all_accounts_path, method: :put, class: 'btn btn-xs btn-default'
+
+%hr
+
+- @tokens.each do |token|
+  .col-sm-2
+    .panel.panel-default
+      .panel-body.text-center.small
+        = link_to token_tweets_path(token.uuid) do
+          %img{ src: token.avatar, class: 'img-circle' }
+          %h5
+            = token.word
+        = token.tweets.user_rated.count

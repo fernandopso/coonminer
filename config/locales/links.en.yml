@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      link: Links
+  links:
+    updated_at_to_minutes_ago: "última divulgação %{minutes} minutos atrás"
+    updated_at_to_hours_ago: "última divulgação %{hours} horas atrás"
+    updated_at_to_days_ago: "última divulgação %{days} dias atrás"
+    see_book_html: "See book <a href='%{path}' target='_blank'>%{title}</a> for more details."
+    book_iir: Introduction to Information Retrieval
+    stop_words: http://nlp.stanford.edu/IR-book/html/htmledition/dropping-common-terms-stop-words-1.html#sec:stopwords
+    tf_idf: http://nlp.stanford.edu/IR-book/html/htmledition/term-frequency-and-weighting-1.html
+    tokenization: http://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html
+    normalization: http://nlp.stanford.edu/IR-book/html/htmledition/normalization-equivalence-classing-of-terms-1.html
+    vocabulary: http://nlp.stanford.edu/IR-book/html/htmledition/the-term-vocabulary-and-postings-lists-1.html
+    svm: http://nlp.stanford.edu/IR-book/html/htmledition/support-vector-machines-and-machine-learning-on-documents-1.html

@@ -1,0 +1,44 @@
+%div{ class: "div-on-hover-#{token.uuid} fixed landing-stats" }
+  %h4
+    = link_to token.word, token_mining_index_path(token.uuid)
+  .row
+    - token.top_links(3).each do |link|
+      .col-sm-12
+        = form_for link, url: ban_token_link_path(token.uuid, link.id), remote: true do |f|
+          .xs-panel.link-xs
+            %h5
+              %a{ href: link.href, target: :blank }= raw link.human_title
+            = link_to token_links_path(token.uuid) do
+              .small.text-muted= link.href
+              .row.small
+                .col-xs-6.col-sm-4
+                  = succeed ':' do
+                    %b= Token.human_attribute_name(:updated_at)
+                  = link.updated_at
+                .col-xs-6.col-sm-4
+                  = succeed ':' do
+                    %b= Token.human_attribute_name(:df)
+                  = link.df
+        %small
+          %hr
+  .row
+    .col-sm-4
+      = link_to token_hashtags_path(token.uuid) do
+        - token.top_hashtags.take(10).each do |item|
+          %br
+          .col-sm-2.text-right= item[:weight]
+          .col-sm-10= item[:text]
+
+    .col-sm-4
+      = link_to token_mentions_path(token.uuid) do
+        - token.top_mentions.take(10).each do |item|
+          %br
+          .col-sm-2.text-right= item[:weight]
+          .col-sm-10= item[:text]
+    .col-sm-4
+      = link_to token_languages_path(token.uuid) do
+        - token.top_languages.take(10).each do |item|
+          %br
+          .col-sm-2.text-right= item[:weight]
+          .col-sm-10= item[:text]
+  %br

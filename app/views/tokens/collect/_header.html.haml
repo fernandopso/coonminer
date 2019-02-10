@@ -1,0 +1,13 @@
+.panel.panel-default{ id: "token_header" }
+  .panel-body.text-center
+    .col-xs-12.col-sm-4.floating
+      %b{ style: "font-size: 19px" }= token.word
+      %p= t("tweets.amount", count: token.tweets.count)
+    .col-xs-12.col-sm-4.col-sm-offset-4
+      %p
+      - if token.keep_cron_crawler?
+        = link_to cron_token_collect_index_path(token.uuid), method: :post, remote: true, class: "btn btn-block btn-default", data: { confirm: t("are_you_sure") } do
+          = t("tokens.stop_cron_crawler")
+      - else
+        = link_to cron_token_collect_index_path(token.uuid), method: :post, remote: true, class: "btn btn-block btn-success", data: { confirm: t("are_you_sure") } do
+          = t("tokens.keep_cron_crawler")

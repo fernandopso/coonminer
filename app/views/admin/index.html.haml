@@ -1,0 +1,8 @@
+- if @users.any?
+  .col-xs-12
+    %table.table
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.email
+            %td= user.tokens.size

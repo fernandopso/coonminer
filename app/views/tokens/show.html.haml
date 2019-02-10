@@ -1,0 +1,23 @@
+= content_for :header do
+  .container-header
+    %strong= t("title_for_token", token: @token.word)
+
+.row
+  .col-xs-12.col-sm-5
+    = render partial: "mining/filter"
+    #user_chart_xs.hidden-sm.hidden-md.hidden-lg
+    #svm_chart_xs.hidden-sm.hidden-md.hidden-lg
+    = render partial: "mining/tweets", locals: { tweets: @tweets }
+  .col-xs-12.col-sm-7
+    = render partial: "mining/accuracy", locals: { token: @token }
+    #user_chart.hidden-xs
+    #svm_chart.hidden-xs
+
+.row
+  .col-xs-12
+    .text-center
+      .digg_pagination
+        = will_paginate @tweets
+
+- if @token.accuracy?
+  = render partial: "chart_rate"

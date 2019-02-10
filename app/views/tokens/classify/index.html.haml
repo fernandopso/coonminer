@@ -1,0 +1,22 @@
+= content_for :header do
+  .container-header
+    %b= t('classify.title')
+
+- if @tweets.empty?
+  .row
+    .col-sm-12
+      .alert.bg-info= t('alerts.tweets_not_found')
+- else
+  .row
+    .col-sm-5{ style: 'margin-top: -10px'}
+      = render partial: 'classify', locals: { tweets: @tweets }
+
+    .col-sm-7
+      .panel.panel-default
+        .panel-body
+          = render partial: 'details', locals: { token: @token }
+
+  .row
+    .text-center
+      .digg_pagination
+        = will_paginate @tweets

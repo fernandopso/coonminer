@@ -1,0 +1,44 @@
+.row
+  - if users.any?
+    - users.each do |user|
+      .col-sm-6
+        %br
+        - profile_path_for_twitter = "https://twitter.com/#{user.username}"
+        .twitter-div
+          %a.twitter-bg.twitter-block{ style: "background-image: url(#{user.profile_image}); background-color: ##{user.profile_color};" }
+          %div
+            %a.twitter-avatar{ href: profile_path_for_twitter, target: :blank }
+              %img.twitter-image{ src: user.image }
+            .twitter-user
+              .twitter-name= link_to user.name, profile_path_for_twitter, target: :blank
+              %span= link_to "@#{user.username}", profile_path_for_twitter, target: :blank
+
+            .twitter-stats
+              %ul.twitter-arrange
+                %li.twitter-arrange-fit
+                  %a{ href: profile_path_for_twitter, title: "#{user.tweets_count} Tweet", target: :blank }
+                    %span.twitter-label.twitter-block= Tweet.model_name.human
+                    %span.twitter-values= user.tweets_count
+                %li.twitter-arrange-fit
+                  %a{ href: "#{profile_path_for_twitter}/following", title: "#{user.following_count} Following", target: :blank }
+                    %span.twitter-label.twitter-block Following
+                    %span.twitter-values= user.following_count
+                %li.twitter-arrange-fit
+                  %a{ href: "#{profile_path_for_twitter}/followers", title: "#{user.followers_count} Followers", target: :blank }
+                    %span.twitter-label.twitter-block Followers
+                    %span.twitter-values= user.followers_count
+                %li.twitter-arrange-fit
+                  %a{ href: profile_path_for_twitter, title: "#{user.df} Document Frequency", target: :blank }
+                    %span.twitter-label.twitter-block= Token.human_attribute_name(:df)
+                    %span.twitter-values= user.df
+
+  - else
+    .col-sm-12
+      .panel.panel-default
+        .panel-body.text-center
+          = t("alerts.zero_users")
+
+.row
+  .text-center
+    .digg_pagination
+      = will_paginate users

@@ -1,0 +1,30 @@
+:javascript
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ["Element", "#{Tweet.model_name.human}", { role: "style" } ],
+      #{@last_3_hours},
+      #{@last_12_hours},
+      #{@last_24_hours},
+      #{@last_3_days},
+      #{@last_7_days}
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+
+    var options = {
+      height: 300,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById("time_bar"));
+    chart.draw(view, options);
+  }

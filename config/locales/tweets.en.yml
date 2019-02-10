@@ -1,0 +1,50 @@
+en:
+  activerecord:
+    models:
+      tweet: Tweets
+    attributes:
+      tweet:
+        text: Tweet
+        reply: Replica
+        retweet: Retweet
+        hashtag: Hashtags
+        mention: Menções
+        lang: Idiomas
+        location: Lugares
+
+  tweets:
+    title: Tweets
+    amount_description: Collect more tweets after classify 50%
+    available_for_classification: available for classification
+    accuracy: "%{percent}%"
+    accuracy_not_found: "-"
+    banned_words: Banned Words
+
+    reduce: Text Reduce
+    vocabulary: Vocabulary
+    classified: Classified
+
+    options_for_mining_index_page:
+      all: Todos
+      unrated: Sem Classificação
+      positive: Apoia
+      neutral: Neutro
+      negative: Não Apoia
+
+    options_for_filter_date:
+      today: Today
+      last_3_hours: 3 horas
+      last_12_hours: 12 horas
+      last_24_hours: 24 horas
+      last_3_days: 3 dias
+      last_7_days: 7 dias
+
+    users:
+      title: Pessoas
+      positive: Positive Users
+      negative: Negative Users
+      neutral: Neutral Users
+
+    amount:
+      one: "%{count} tweet"
+      other: "%{count} tweets"

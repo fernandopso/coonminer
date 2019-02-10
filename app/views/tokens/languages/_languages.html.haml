@@ -1,0 +1,13 @@
+.panel.panel-default.xs-padding
+  .panel-body.xs-panel
+    - if languages.any?
+      %table.table
+        %thead
+          %tr
+            %th
+            %th.small.text-center= Token.human_attribute_name(:frequency)
+        %tbody
+          - languages.each do |language|
+            %tr
+              %td= t("languages.#{language.name}")
+              %td.text-center= language.df

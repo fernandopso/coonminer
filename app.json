@@ -1,0 +1,23 @@
+{
+  "name": "CoonMiner",
+  "repository": "https://github.com/fernandopso/coonminer",
+  "formation": {
+    "web": {
+      "quantity": 2,
+      "size": "free"
+    }
+  },
+  "image": "heroku/ruby",
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "bundle install",
+        "test": "bundle exec rspec"
+      },
+      "addons": [
+         "heroku-redis",
+         "heroku-postgresql"
+      ]
+    }
+  }
+}

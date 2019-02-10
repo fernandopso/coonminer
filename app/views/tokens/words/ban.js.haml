@@ -1,0 +1,3 @@
+- bans = j(render(partial: 'banned', locals: { banneds: @banneds }))
+$("#banned_words").html("#{bans}")
+$("#word_#{@word_id}").remove();

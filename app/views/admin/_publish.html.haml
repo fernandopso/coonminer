@@ -1,0 +1,37 @@
+%table.table{ id: "tokens_publish" }
+  %thead
+    %tr
+      %th
+      %th
+      %th.small= Token.human_attribute_name(:word)
+      %th.small= Tweet.model_name.human
+      %th.small= Token.human_attribute_name(:collect_at)
+      %th.small= Token.human_attribute_name(:publish_at)
+      %th.small= User.model_name.human
+      %th
+      %th
+      %th
+  %tbody
+    - tokens.each do |token|
+      %tr{ id: "token_#{token.uuid}" }
+        %td.small{ class: "#{ token.enable ? 'success' : 'danger' }" }= token.id
+        %td
+          = form_for token, url: category_token_path(token.uuid), remote: true do |f|
+            = f.select :category_id, options_for_categories, { include_blank: t("categories.title") }, class: "submitable"
+        %td= link_to token.word, token_tweets_path(token.uuid)
+        %td.small= token.statistics.amount
+        %td.small= l(token.collect_at) if token.collect_at
+        %td.small= l(token.publish_at) if token.publish_at
+        %td.small= token.user
+        %td
+          - if token.public
+            = link_to t("make_private"), privacity_token_path(token.uuid), method: :post, remote: true, class: "btn btn-xs btn-default", data: { disable_with: t("wait") }
+          - else
+            = link_to t("make_public"), privacity_token_path(token.uuid), method: :post, remote: true, class: "btn btn-xs btn-success", data: { disable_with: t("wait") }
+        %td
+          - if token.publishable
+            = link_to t("admin.unpublish"), publish_token_path(token.uuid), method: :post, remote: true, class: "btn btn-xs btn-danger"
+          - else
+            = link_to t("admin.publish"), publish_token_path(token.uuid), method: :post, remote: true, class: "btn btn-xs btn-primary"
+        %td
+          = render partial: "tokens/delete", locals: { token: token }

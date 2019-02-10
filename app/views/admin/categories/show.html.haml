@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Titulo:
+  = @category.title
+%p
+  %b Slug:
+  = @category.slug
+
+= link_to t('edit'), edit_category_path(@category)
+\|
+= link_to t('back'), categories_path

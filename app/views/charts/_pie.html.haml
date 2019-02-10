@@ -1,0 +1,18 @@
+:javascript
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(
+      #{raw options}
+    );
+
+    var options = {
+      height: 300,
+      pieHole: 0.5
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('chart'));
+    chart.draw(data, options);
+    var chart = new google.visualization.PieChart(document.getElementById('chart_xs'));
+    chart.draw(data, options);
+  }

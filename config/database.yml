@@ -1,0 +1,19 @@
+default: &default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  port: 5432
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: coonminer_dev
+
+test:
+  <<: *default
+  database: coonminer_test
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>

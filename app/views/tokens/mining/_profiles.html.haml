@@ -1,0 +1,3 @@
+- token.top_profiles.each do |profile|
+  = link_to "https://twitter.com/#{profile.username}", target: :blank do
+    %img.twitter-image-circle{ src: profile.image }

@@ -1,0 +1,19 @@
+collect:
+  name: Collect tweets every minute
+  cron: "*/1 * * * *"
+  class: CollectWorker
+
+svm:
+  name: Predict with SVM every 15 minutes
+  cron: '*/15 * * * *'
+  class: SvmWorker
+
+statistics:
+  name: Update stats of token
+  cron: "0 * * * *"
+  class: StatisticsWorker
+
+update_title_to_links:
+  name: Get title from links
+  cron: "*/10 * * * *"
+  class: CrawlerLinksWorker

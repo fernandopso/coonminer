@@ -1,0 +1,22 @@
+= content_for :header do
+  .container-header
+    %b= t('tweets.banned_words')
+
+.panel.panel-default
+  .panel-body
+    .row.text-center
+      %h5
+        = Word.human_attribute_name(:banned)
+        = surround '(', ')' do
+          = @banneds.count
+
+    %br
+
+    %table.table
+      %tbody
+        - @banneds.each.with_index do |word, index|
+          = form_for word, url: restore_token_word_path(params[:token_id], word), remote: true do |f|
+            = f.hidden_field :word_id, value: index
+            %tr{ id: "word_#{index}" }
+              %td= word.name
+              %td= f.submit t('restore'), class: 'btn btn-xs btn-default',  data: { disable_with: t('wait_xs') }

@@ -1,0 +1,11 @@
+en:
+  admin:
+    users: Adiministrar usuários
+    tokens: Administrar tokens
+    publish: Publicado
+    unpublish: Privado
+    rates: Classificados
+    newsletter: Newsletter
+    minutes_ago: '%{time} minutos atrás'
+    samples: Amostras
+    contacts: Gerenciar contatos

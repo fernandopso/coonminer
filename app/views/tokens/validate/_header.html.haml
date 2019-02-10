@@ -1,0 +1,28 @@
+.row{ id: 'classify_header' }
+  .col-sm-12
+    .panel.panel-default
+      .panel-body.text-center
+        .row
+          .row
+            .col-sm-3.text-primary
+              %h5
+                = token.statistics.user_rated_positive
+                = t('slash')
+                = token.statistics.svm_rated_positive
+              .small= t('positive')
+
+            .col-sm-3.text-muted
+              %h5
+                = token.statistics.user_rated_neutral
+                = t('slash')
+                = token.statistics.svm_rated_neutral
+              .small= t('neutral')
+            .col-sm-3.text-danger
+              %h5
+                = token.statistics.user_rated_negative
+                = t('slash')
+                = token.statistics.svm_rated_negative
+              .small= t('negative')
+            .col-sm-3
+              %h5= token.accuracy_human
+              .small= t('tokens.show.accuracy')

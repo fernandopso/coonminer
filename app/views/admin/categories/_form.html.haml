@@ -1,0 +1,19 @@
+= form_for @category do |f|
+  .row
+    .col-sm-1.floating
+      %h5= f.label :title
+    .col-sm-9
+      = f.text_field :title, class: 'form-control'
+
+  .row
+    .col-sm-1.floating
+      %h5= f.label :slug
+    .col-sm-9
+      = f.text_field :slug, class: 'form-control'
+
+  .row
+    %br
+    .col-xs-12.col-sm-6.col-sm-offset-1
+      = f.submit t('create'), class: "btn btn-tw btn-block", data: { disable_with: t("wait") }
+    .col-xs-12.col-sm-3
+      = link_to t("cancel"), tokens_path, class: "btn btn-default btn-block"

@@ -1,0 +1,24 @@
+.panel.panel-default.xs-padding
+  .panel-body.xs-panel
+    .row.text-center
+      %h5
+        = t('words.index')
+        = surround '(', ')' do
+          = words.total_entries
+
+    %br
+
+    %table.table
+      %thead
+        %tr
+          %th.small= Token.human_attribute_name(:word)
+          %th.small.text-center= Token.human_attribute_name(:df)
+          %th
+      %tbody
+        - words.each.with_index do |word, index|
+          = form_for word, url: ban_token_word_path(params[:token_id], word), remote: true do |f|
+            = f.hidden_field :word_id, value: index
+            %tr{ id: "word_#{index}" }
+              %td= word.name[0..35]
+              %td.text-center= word.df
+              %td= f.submit t('ban'), class: 'btn btn-xs btn-default',  data: { disable_with: t('wait_xs') }

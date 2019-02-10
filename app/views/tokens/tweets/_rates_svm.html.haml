@@ -1,0 +1,16 @@
+.row
+  .col-sm-12
+    .panel.panel-default
+      .panel-body.text-center
+        .col-xs-3
+          %h5= token.svm_rated
+          = t("tokens.show.rated_by_svm")
+        .col-xs-3.text-primary
+          %h5= token.svm_rated_positive
+          = t("positive")
+        .col-xs-3.text-muted
+          %h5= token.svm_rated_neutral
+          = t("neutral")
+        .col-xs-3.text-danger
+          %h5= token.svm_rated_negative
+          = t("negative")

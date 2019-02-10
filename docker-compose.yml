@@ -1,0 +1,42 @@
+version: '3'
+services:
+  rails:
+    build: .
+    env_file:
+      - .env
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    depends_on:
+      - postgres
+    volumes:
+      - .:/coonminer
+    ports:
+      - '3000:3000'
+
+  postgres:
+    image: postgres
+    volumes:
+      - coonminer-postgres:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+  redis:
+    image: redis
+    command: redis-server
+    volumes:
+      - coonminer-redis:/data
+
+  sidekiq:
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+    build: .
+    command: bundle exec sidekiq -C config/schedule.yml
+    volumes:
+      - .:/coonminer-sidekiq
+
+volumes:
+  coonminer-redis:
+  coonminer-postgres:
+  coonminer-sidekiq:

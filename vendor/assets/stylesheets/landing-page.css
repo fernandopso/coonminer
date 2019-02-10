@@ -1,0 +1,53 @@
+.intro-header {
+  text-align: center;
+  color: #f8f8f8;
+  position: relative;
+  background-color: #021427;
+  padding-top: 7%;
+  padding-bottom: 5%;
+  margin: -15px;
+}
+
+.intro-header > h1 {
+  margin: 0;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  font-size: 4em;
+}
+
+@media (max-width: 623px) {
+  .intro-header > h1 {
+    margin: 0;
+    margin-top: 55px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 2em;
+  }
+
+  .intro-header > h3 {
+    font-size: 1em;
+  }
+}
+
+.section-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.lead {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 30px;
+  text-align: center;
+}
+
+.landing_color {
+  background-color: #f8f8f8;
+  padding: 5px 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+p.copyright {
+  margin: 15px 0 0;
+}

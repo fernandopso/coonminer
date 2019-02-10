@@ -1,0 +1,36 @@
+en:
+  alerts:
+    all_tweets_rated_by_svm: All tweets rated
+    delay_tf_idf: This is automatically (wait a few minutes)
+    first_token: "Choose a token, aka a word, #hashtag or @mention"
+    free_account_prediction_blocked: Not available for prediction
+    free_account: Free account! monitor up to %{max} tokens
+    free_account_collect_html: <b>Free Coon Miner!</b> All tweets unrated by user with date more than seven days are deleted.
+    min_rated: Need to classify at least 25% of the collected data for predict
+    not_authorized: You do not have permission
+    required_classify: Rate %{min_rate} tweets
+    see_df_html: Calcule TF-IDF to see <b>Document Frequency</b>
+    stop_cron_crawler: You disable the collection of tweets
+    token_disabled: Token disabled
+    tweets_not_found: Tweet not found
+    zero_tweets_rated_html: <b>Coon Miner</b> rate tweets after <b>User</b> rate some tweets
+    updated_successfully: Updated successfully
+    you_are_admin: You are an administrator and this is automatically
+    zero_links: Link not found
+    zero_tokens: Token not found
+    zero_users: User not found
+    contact_created: Message sent successfully
+    set_language_by_user_html: "Filter applied to \"%{lang}\""
+
+    amount_saved:
+      one: "%{count} tweet collected"
+      other: "%{count} tweets collected"
+
+    new_token:
+      title: Choose a good token!
+      unedited: The token cannot be edited
+      li_search: Search on Twitter before!
+      li_hashtag: "Consider using #hashtags"
+      li_ambiguous: Avoid ambiguous words
+      li_case: Uppercase or lowercase does not matter
+      li_accent: Accented letters does not matter

@@ -1,0 +1,4 @@
+- details = j(render(partial: "details", locals: { token: @token }))
+$("#tweets_details").replaceWith("#{details}");
+
+$("#tweet_#{@tweet.id}").remove();

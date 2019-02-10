@@ -1,0 +1,11 @@
+%table
+  %thead
+    %tr
+      %th Token
+      %th Email
+
+  %tbody
+    - @newsletters.each do |newsletter|
+      %tr
+        %td= newsletter.token_id
+        %td= newsletter.email
