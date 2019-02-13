@@ -1,20 +1,21 @@
 :javascript
   google.charts.load('current', {
-     'packages': ['geochart'],
-     'mapsApiKey': 'AIzaSyDBXEC4KTPzUbDw1NQTXJ6G4XP-LsGJnI4'
-   });
-   google.charts.setOnLoadCallback(drawMarkersMap);
+    'packages': ['geochart'],
+    'mapsApiKey': "#{ENV['COONMINER_GOOGLE_MAPS_API_KEY']}"
+  });
+
+  google.charts.setOnLoadCallback(drawMarkersMap);
     function drawMarkersMap() {
-    var data = google.visualization.arrayToDataTable(
-      #{raw options}
-    );
+      var data = google.visualization.arrayToDataTable(
+        #{raw items}
+      );
 
-    var options = {
-      backgroundColor: 'white',
-      displayMode: 'markers',
-      colorAxis: { colors: ['#002BDC', '#00A6E7'] }
+      var options = {
+        backgroundColor: 'white',
+        displayMode: 'markers',
+        colorAxis: { colors: ['#002BDC', '#00A6E7'] }
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart'));
+      chart.draw(data, options);
     };
-
-    var chart = new google.visualization.GeoChart(document.getElementById('chart'));
-    chart.draw(data, options);
-  };
