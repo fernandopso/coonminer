@@ -3,10 +3,8 @@
 class SampleController < ApplicationController
   def create
     collect if build_new_token && @token.save
-  end
 
-  def tags
-    @token = Token.find_by_uuid(params[:id])
+    redirect_to token_mining_index_path(@token.uuid)
   end
 
   private
