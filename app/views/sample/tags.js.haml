@@ -1,7 +1,0 @@
-- if @token.collected?
-  $("#new_sample :input").attr("disabled", false);
-  $("#tags").html("#{j(render(partial: 'tokens/tags', locals: { token: @token }))}")
-  $('.progress-bar').css('width', '100%');
-- else
-  setTimeout(function(){ $("#tags_of_tweets").attr('action', "#{tags_sample_path(@token.uuid)}").submit();}, 1000);
-  $("#tags").html("#{j(render(partial: 'tokens/tags', locals: { token: @token }))}")

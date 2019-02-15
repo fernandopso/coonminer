@@ -54,12 +54,7 @@ Rails.application.routes.draw do
   end
 
   resources :home, only: :index
-  resources :sample, only: :create do
-    member do
-      get :tags
-    end
-  end
-
+  resources :sample, only: :create
   resources :contacts, only: %w[index new create] do
     collection do
       get :success
