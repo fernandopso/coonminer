@@ -1,6 +1,6 @@
 collect:
-  name: Collect tweets every minute
-  cron: "*/1 * * * *"
+  name: Collect tweets every 2 minutes
+  cron: "*/2 * * * *"
   class: CollectWorker
 
 svm:
