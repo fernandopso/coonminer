@@ -13,7 +13,7 @@ statistics:
   cron: "0 * * * *"
   class: StatisticsWorker
 
-update_title_to_links:
-  name: Get title from links
-  cron: "*/10 * * * *"
+links_title:
+  name: Crawler title to all public tokens at 4h
+  cron: "0 4 * * *"
   class: CrawlerLinksWorker
