@@ -112,7 +112,7 @@ group :development, :test do
 
   # Preview mail in the browser instead of sending.
   # https://github.com/ryanb/letter_opener
-  gem "letter_opener"
+  gem 'letter_opener'
 end
 
 group :development do
@@ -124,5 +124,13 @@ group :development do
 
   # Detect N+1 query problems (show in the log)
   # https://github.com/flyerhzm/bullet
-  gem "bullet"
+  gem 'bullet'
+
+  # A series of things you can use to benchmark a Rails or Ruby app
+  # https://github.com/schneems/derailed_benchmarks
+  gem 'derailed_benchmarks'
+
+  # A sampling call-stack profiler
+  # https://github.com/tmm1/stackprof
+  gem 'stackprof'
 end
