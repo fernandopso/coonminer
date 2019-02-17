@@ -60,9 +60,6 @@ gem 'liblinear-ruby'
 # https://github.com/javan/whenever/
 gem 'whenever', :require => false
 
-# New Relic
-gem 'newrelic_rpm'
-
 # Applies a patch to OpenURI to optionally allow redirections from HTTP to HTTPS
 # https://github.com/open-uri-redirections/open_uri_redirections
 gem 'open_uri_redirections'
