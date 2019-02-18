@@ -20,7 +20,7 @@ module Links
     end
 
     def title_for(html)
-      html[7 + begin_title(html)..final_title(html) - 1].encode('UTF-8')
+      html[7 + begin_title(html)..final_title(html) - 1]
     end
 
     def begin_title(body)
