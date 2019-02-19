@@ -1,5 +1,5 @@
 default: &default
-  max_tweeets_to_save:
+  max_tweets_to_save:
     free: 10
     paid: 50
   max_tweets_to_collect: 50
@@ -12,7 +12,7 @@ test:
 
 production:
   <<: *default
-  max_tweeets_to_save:
+  max_tweets_to_save:
     free: 100
     paid: 400
   max_tweets_to_collect: 800
