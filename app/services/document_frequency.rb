@@ -47,13 +47,13 @@ class DocumentFrequency
   def profile_frequency
     if user
       profile = token.profiles.find_or_initialize_by(username: tweet.username)
-      profile.image = user.profile_image_url.to_s
-      profile.profile_image = user.profile_banner_url.to_s
-      profile.profile_color = user.profile_link_color
-      profile.name = user.name
-      profile.tweets_count = user.statuses_count
-      profile.followers_count = user.followers_count
-      profile.following_count = user.friends_count
+      profile.image = user['profile_image_url']
+      profile.profile_image = user['profile_banner_url'].to_s
+      profile.profile_color = user['profile_link_color']
+      profile.name = user['name']
+      profile.tweets_count = user['statuses_count']
+      profile.followers_count = user['followers_count']
+      profile.following_count = user['friends_count']
       profile.up_df
     end
   end

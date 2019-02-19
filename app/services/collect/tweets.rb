@@ -17,7 +17,7 @@ module Collect
 
     def collect_tweets
       tweets(token.word, token.lang).each do |t|
-        CreateTweetWorker.perform_async(t, token.id)
+        CreateTweetWorker.perform_async(t.as_json, t.url.to_s, token.id)
       end
     end
   end
