@@ -2,9 +2,9 @@ class DocumentFrequency
 
   attr_accessor :tweet, :token, :user
 
-  def initialize(tweet, token, user = nil)
+  def initialize(tweet, token_id, user = nil)
     self.tweet = tweet
-    self.token = token
+    self.token = Token.find(token_id)
     self.user = user
   end
 
