@@ -15,6 +15,8 @@ class CreateTweetWorker
     ActiveRecord::Base.connection_pool.with_connection do
       tweet = new_tweet(tweet_from_twitter, token_id)
 
+      Rails.logger.info("Build #{tweet} to token_id: #{token_id}")
+
       DocumentFrequency
         .new(tweet, token_id, tweet_from_twitter.user)
         .call if tweet.save
@@ -44,14 +46,13 @@ class CreateTweetWorker
 
   def can_save?(token_id)
     token = Token.find(token_id)
-    token.tweets.count < max_tweets_to_save(token)
+
+    return true if token.enable
+
+    token.tweets.count < max_tweets_to_save
   end
 
-  def max_tweets_to_save(token)
-    if token.enable
-      CoonMiner.config.max_tweets_to_save.paid
-    else
-      CoonMiner.config.max_tweets_to_save.free
-    end
+  def max_tweets_to_save
+    CoonMiner.config.max_tweets_to_save.free
   end
 end
