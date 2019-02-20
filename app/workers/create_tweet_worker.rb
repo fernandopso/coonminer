@@ -3,7 +3,7 @@
 class CreateTweetWorker
   include Sidekiq::Worker
 
-  sidekiq_options retry: 0
+  sidekiq_options retry: 5
 
   def perform(tweet_from_twitter, tweet_url, token_id)
     create(tweet_from_twitter, tweet_url, token_id) if can_save?(token_id)
