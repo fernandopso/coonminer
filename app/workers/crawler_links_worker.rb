@@ -3,6 +3,8 @@
 class CrawlerLinksWorker
   include Sidekiq::Worker
 
+  sidekiq_options retry: 0
+
   def perform
     Category.first.tokens.each do |token|
       token.links.order_by_df_desc.take(3).each do |link|
