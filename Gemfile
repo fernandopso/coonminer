@@ -96,7 +96,7 @@ group :development, :test do
   gem 'rspec-rails'
 
   # A library for setting up Ruby objects as test data
-  # https://github.com/thoughtbot/factory_girl
+  # https://github.com/thoughtbot/factory_bot
   gem 'factory_bot_rails'
 
   # Collection of testing matchers extracted from Shoulda
