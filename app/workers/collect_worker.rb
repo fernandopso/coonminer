@@ -12,7 +12,7 @@ class CollectWorker
 
     return unless token
 
-    if Sidekiq::Stats.new.enqueued < MAX_JOBS_TO_ENQUEUE
+    if Sidekiq::Stats.new.enqueued < MAX_JOBS_TO_ENQUEUE.to_i
       logger.info "Try Collect::Tweets to #{token.word}"
 
       Collect::Tweets.new(token).call
