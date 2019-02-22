@@ -10,7 +10,6 @@ module Collect
 
     def call
       collect_tweets
-      token.update(collect_at: DateTime.current)
     end
 
     private

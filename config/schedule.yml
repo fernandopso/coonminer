@@ -1,7 +1,7 @@
 collect:
   name: Collect tweets every minute
   cron: "*/1 * * * *"
-  class: CollectWorker
+  class: Crawlers::Tokens::CollectTweetsWorker
 
 svm:
   name: Predict with SVM every 15 minutes

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CollectWorker do
+RSpec.describe Crawlers::Tokens::CollectTweetsWorker do
   describe '.perform' do
     subject { described_class.new.perform }
 
@@ -19,20 +19,26 @@ RSpec.describe CollectWorker do
         it do
           expect(Collect::Tweets).to receive(:new).with(@token).and_return(collector)
           expect(collector).to receive(:call)
-          expect(StatisticsWorker).to receive(:perform_async).with(@token.id)
+
           subject
+
+          expect(@token.reload.collect_at).not_to be nil
         end
       end
 
       context 'when has enqueued max jobs' do
         before do
-          expect_any_instance_of(Sidekiq::Stats).to receive(:enqueued).and_return(CollectWorker::MAX_JOBS_TO_ENQUEUE)
+          expect_any_instance_of(Sidekiq::Stats)
+            .to receive(:enqueued)
+            .and_return(described_class::MAX_JOBS_TO_ENQUEUE)
         end
 
         it do
           expect(Collect::Tweets).to_not receive(:new)
-          expect(StatisticsWorker).to_not receive(:perform_async)
+
           subject
+
+          expect(@token.reload.collect_at).to be nil
         end
       end
     end
@@ -40,7 +46,6 @@ RSpec.describe CollectWorker do
     context 'when not found a token to perform' do
       it do
         expect(Collect::Tweets).to_not receive(:new)
-        expect(StatisticsWorker).to_not receive(:perform_async)
         subject
       end
     end
