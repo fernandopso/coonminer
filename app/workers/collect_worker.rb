@@ -5,16 +5,24 @@ class CollectWorker
 
   sidekiq_options retry: 0
 
+  MAX_JOBS_TO_ENQUEUE = ENV['MAX_JOBS_TO_ENQUEUE'] || 1
+
   def perform
     token = Token.active.cron_active.collect_at_asc.first
 
-    logger.info "Try Collect::Tweets to #{token.word}"
+    return unless token
 
-    Collect::Tweets.new(token).call
+    if Sidekiq::Stats.new.enqueued < MAX_JOBS_TO_ENQUEUE
+      logger.info "Try Collect::Tweets to #{token.word}"
 
-    logger.info "Perform async StatisticsWorker to #{token.id}"
+      Collect::Tweets.new(token).call
 
-    StatisticsWorker.perform_async(token.id)
+      logger.info "Perform async StatisticsWorker to #{token.id}"
+
+      StatisticsWorker.perform_async(token.id)
+    else
+      logger.info 'Many jobs are enqueued and enqueue more can failed when allow memory on Redis'
+    end
 
     logger.info "done to #{token.word}"
   end
