@@ -16,6 +16,7 @@ test:
   database: coonminer_test
 
 production:
-  timeout: <%= ENV['DATABASE_TIMEOUT'] %>
+  variables:
+    statement_timeout: <%= ENV['DATABASE_TIMEOUT'] %>
   pool: <%= ENV["DATABASE_POOL"] || ENV['RAILS_MAX_THREADS'] %>
   url: <%= ENV['DATABASE_URL'] %>
