@@ -29,6 +29,10 @@ module Crawlers
 
       def token
         @token ||= Token.active.cron_active.collect_at_asc.first
+      rescue ActiveRecord::ConnectionTimeoutError => e
+        Rails.logger.info e
+        Crawlers::Tokens::CollectTweetsWorker.perform_async
+        false
       end
     end
   end

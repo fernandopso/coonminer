@@ -49,5 +49,18 @@ RSpec.describe Crawlers::Tokens::CollectTweetsWorker do
         subject
       end
     end
+
+    context 'when could not obtain a connection from the pool to select a token' do
+      before do
+        expect(Token).to receive(:active).and_raise(ActiveRecord::ConnectionTimeoutError)
+      end
+
+      it 'should enqueue a job to perform async' do
+        expect(Crawlers::Tokens::CollectTweetsWorker).to receive(:perform_async).once
+        expect(Rails.logger).to receive(:info).once
+        expect_any_instance_of(Sidekiq::Stats).to_not receive(:enqueued).once
+        subject
+      end
+    end
   end
 end
