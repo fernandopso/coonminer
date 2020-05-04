@@ -1,7 +1,7 @@
 <p align="center"><img width=12.5% src="https://github.com/fernandopso/coonminer/blob/master/app/assets/images/coon.png"></p>
 
 # [Coon Miner](https://coonminer.herokuapp.com)
-> A free and open source app to data analysis and machine learning to public tweets.
+> A free and open source app to data analysis and machine learning for public tweets.
 
 Demo: [https://coonminer.herokuapp.com](https://coonminer.herokuapp.com)
 
@@ -9,7 +9,7 @@ Demo: [https://coonminer.herokuapp.com](https://coonminer.herokuapp.com)
 
 ### Security Credentials Required
 
-You can use the `.env` file (link as `.env.sample`) and run with `docker-compose up` after set up configs:
+You need use the `.env` file (link as `.env.sample`) to run with `docker-compose up` after set up configs:
 
 - [Twitter Application Manager](https://apps.twitter.com/) credentials to:
 
@@ -21,7 +21,7 @@ You can use the `.env` file (link as `.env.sample`) and run with `docker-compose
 
     COONMINER_ACCESS_TOKEN_SECRET
 
-- A secret key to your application:
+- And a secret key to your application:
 
     COONMINER_SECRET_KEY
 
