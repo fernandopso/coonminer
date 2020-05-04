@@ -13,7 +13,7 @@ COPY Gemfile.lock /coonminer/Gemfile.lock
 COPY .env.sample /coonminer/.env
 
 RUN gem install bundler
-RUN bundle install --binstubs
+RUN bundle install
 COPY . /coonminer
 
 # Add a script to be executed every time the container starts.
