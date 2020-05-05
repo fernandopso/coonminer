@@ -1,24 +1,17 @@
 class Tweet < ActiveRecord::Base
-  # Constants -----------------------------------------------------------------
   POSITIVE = 'positive'
   NEGATIVE = 'negative'
   NEUTRAL  = 'neutral'
 
   RATE_ADAPTER = { POSITIVE =>  1, NEUTRAL  =>  0, NEGATIVE => -1 }
 
-  # Concerns ------------------------------------------------------------------
-
-  # Validations ---------------------------------------------------------------
   validates :text, presence: true, allow_blank: false
   validates :url, presence: true, allow_blank: false
   validates_uniqueness_of :url, scope: :token_id
   validates_uniqueness_of :uuid
   validates :token_id, presence: true
 
-  # Associations --------------------------------------------------------------
   belongs_to :token
-
-  # Scopes --------------------------------------------------------------------
 
   scope :user_unrated, ->  { where(rate: nil) }
   scope :user_positive, -> { where(rate: POSITIVE) }
@@ -80,14 +73,9 @@ class Tweet < ActiveRecord::Base
   scope :with_languages, -> { where.not(lang: nil) }
   scope :with_locations, -> { where.not(location: nil) }
 
-  # Accessors -----------------------------------------------------------------
-
-  # Callbacks -----------------------------------------------------------------
   before_create do
     self.uuid = SecureRandom.uuid unless self.uuid
   end
-
-  # Methods -------------------------------------------------------------------
 
   def rate_to_i
     RATE_ADAPTER[self.rate]

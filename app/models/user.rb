@@ -1,28 +1,16 @@
 class User < ActiveRecord::Base
-  # Constants -----------------------------------------------------------------
   ADMIN = ENV['COONMINER_ADMIN_ROLE'] || 'admin'
 
-  # Concerns ------------------------------------------------------------------
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :rememberable, :trackable
 
-  # Validations ---------------------------------------------------------------
   validates :email, presence: true, allow_blank: false
 
-  # Associations --------------------------------------------------------------
   belongs_to :company
 
-  # Scopes --------------------------------------------------------------------
   scope :admins, -> { where(role: ADMIN) }
   scope :current_sign_in_at_desc, -> { order('current_sign_in_at desc') }
 
-  # Accessors -----------------------------------------------------------------
-
-  # Callbacks -----------------------------------------------------------------
   after_create :company_builder
-
-  # Methods -------------------------------------------------------------------
 
   def create_token?
     tokens.count < Company::MAX_TOKENS

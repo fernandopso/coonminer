@@ -1,16 +1,12 @@
 class Token < ActiveRecord::Base
-  # Constants -----------------------------------------------------------------
   MAX_TWEETS = 500
 
-  # Concerns ------------------------------------------------------------------
   include TokenConcerns::Statusable
   include TokenConcerns::Trendable
 
-  # Validations ---------------------------------------------------------------
   validates :word, presence: true, allow_blank: false
   validates :lang, presence: true, allow_blank: false
 
-  # Associations --------------------------------------------------------------
   belongs_to :company
   belongs_to :category
   has_many :tweets
@@ -21,44 +17,32 @@ class Token < ActiveRecord::Base
   has_many :links
   has_many :profiles
   has_many :words
-
   has_one :account
   has_one :statistics
 
-  # Scopes --------------------------------------------------------------------
   scope :accuracies, -> { where.not(accuracy: nil) }
   scope :news, -> { where(accuracy: nil) }
-
   scope :privated, -> { where(public: false) }
   scope :publics, -> { where(public: true) }
   scope :active, -> { where(enable: true) }
   scope :disabled, -> { where(enable: false) }
   scope :publishables, -> { where(publishable: true) }
   scope :not_publishables, -> { where(publishable: false) }
-
   scope :cron_active, -> { where(keep_cron_crawler: true) }
   scope :cron_disabled, -> { where(keep_cron_crawler: false) }
-
   scope :collect_at_asc, -> { order('collect_at asc') }
   scope :collect_at_desc, -> { order('collect_at desc') }
-
   scope :tf_idf_at_asc, -> { order('tf_idf_at asc') }
   scope :svm_rated_at_asc, -> { order('svm_rated_at asc') }
   scope :publish_at_asc, -> { order('publish_at asc') }
-
   scope :category_nil, -> { where(category: nil) }
   scope :category_technology, -> { where(category: "technology") }
   scope :category_entertainment, -> { where(category: "entertainment") }
   scope :category_person, -> { where(category: "person") }
   scope :category_politics, -> { where(category: "politics") }
-
   scope :order_by_word, -> { order(:word) }
-
   scope :five_days_ago, -> { where('created_at >= :five_days_ago', :five_days_ago  => Time.now - 5.days) } 
 
-  # Accessors -----------------------------------------------------------------
-
-  # Callbacks -----------------------------------------------------------------
   before_create do
     self.uuid = HumanUuid.new(word).call
   end
@@ -66,8 +50,6 @@ class Token < ActiveRecord::Base
   after_create do
     self.create_statistics
   end
-
-  # Methods -------------------------------------------------------------------
 
   def options_for_languages
     languages.map{ |l| [l.human_name, l.name] if l.human_name }.compact
