@@ -11,9 +11,9 @@
       .panel-body.text-center
         .row
           %h5#tweets_count
-            = token.statistics.user_rated
+            = token.metric.user_rated
             = t('slash')
-            = token.statistics.svm_rated
+            = token.metric.svm_rated
           .small
             = t('rate.rated')
             = t('slash')

@@ -1,6 +1,6 @@
 - header = j(render(partial: "header", locals: { token: @token }))
 $("#classify_header").replaceWith("#{header}");
 
-$("#tweets_count").html("#{@token.statistics.user_rated} #{t("slash")} #{@token.statistics.svm_rated}")
+$("#tweets_count").html("#{@token.metric.user_rated} #{t("slash")} #{@token.metric.svm_rated}")
 
 $("#tweet_#{@tweet.id}").remove();

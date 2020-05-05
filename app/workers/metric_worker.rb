@@ -1,4 +1,4 @@
-class StatisticsWorker
+class MetricWorker
   include Sidekiq::Worker
 
   sidekiq_options retry: 0
@@ -12,11 +12,11 @@ class StatisticsWorker
     end
 
     tokens.each do |token|
-      logger.info "Try StatisticsToken to #{token.word}"
+      logger.info "Try MetricToken to #{token.word}"
 
-      StatisticsToken.new(token).update
+      MetricToken.new(token).update
 
-      logger.info token.statistics.as_json
+      logger.info token.metric.as_json
     end
 
     logger.info "done"

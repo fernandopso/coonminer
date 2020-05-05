@@ -1,4 +1,4 @@
-class StatisticsToken
+class MetricToken
   ATTRS = %w[
     amount
     user_rated
@@ -25,15 +25,15 @@ class StatisticsToken
     last_7_days
   ]
 
-  attr_accessor :token, :statistics
+  attr_accessor :token, :metric
 
   def initialize(token)
     self.token = token
-    self.statistics = token.statistics
+    self.metric = token.metric
   end
 
   def update
-    token.update(accuracy: accuracy) if statistics.update(attributes)
+    token.update(accuracy: accuracy) if metric.update(attributes)
   end
 
   private
@@ -141,20 +141,20 @@ class StatisticsToken
   end
 
   def percent_positive
-    if statistics.amount_rated.to_f > 0
-      (statistics.positive * 100) / statistics.amount_rated.to_f
+    if metric.amount_rated.to_f > 0
+      (metric.positive * 100) / metric.amount_rated.to_f
     end
   end
 
   def percent_neutral
-    if statistics.amount_rated.to_f > 0
-      (statistics.neutral * 100) / statistics.amount_rated.to_f
+    if metric.amount_rated.to_f > 0
+      (metric.neutral * 100) / metric.amount_rated.to_f
     end
   end
 
   def percent_negative
-    if statistics.amount_rated.to_f > 0
-      (statistics.negative * 100) / statistics.amount_rated.to_f
+    if metric.amount_rated.to_f > 0
+      (metric.negative * 100) / metric.amount_rated.to_f
     end
   end
 end

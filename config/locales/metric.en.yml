@@ -1,12 +1,12 @@
 en:
   activerecord:
     models:
-      statistics: Estatísticas
+      metric: Estatísticas
     attributes:
-      statistics:
+      metric:
         updated_at: Atualização
 
-  statistics:
+  metric:
     last_3_hours: "%{amount} tweets nas últimas 3 horas"
     last_12_hours: "%{amount} tweets nas últimas 12 horas"
     last_24_hours: "%{amount} tweets nas últimas 24 horas"

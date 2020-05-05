@@ -19,7 +19,7 @@
           = form_for token, url: category_token_path(token.uuid), remote: true do |f|
             = f.select :category_id, options_for_categories, { include_blank: t("categories.title") }, class: "submitable"
         %td= link_to token.word, token_tweets_path(token.uuid)
-        %td.small= token.statistics.amount
+        %td.small= token.metric.amount
         %td.small= l(token.collect_at) if token.collect_at
         %td.small= l(token.publish_at) if token.publish_at
         %td.small= token.user

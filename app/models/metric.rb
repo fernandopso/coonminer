@@ -1,3 +1,3 @@
-class Statistics < ActiveRecord::Base
+class Metric < ActiveRecord::Base
   validates :token_id, presence: true
 end

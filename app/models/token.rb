@@ -18,7 +18,7 @@ class Token < ActiveRecord::Base
   has_many :profiles
   has_many :words
   has_one :account
-  has_one :statistics
+  has_one :metric
 
   scope :accuracies, -> { where.not(accuracy: nil) }
   scope :news, -> { where(accuracy: nil) }
@@ -48,7 +48,7 @@ class Token < ActiveRecord::Base
   end
 
   after_create do
-    self.create_statistics
+    self.create_metric
   end
 
   def options_for_languages

@@ -8,10 +8,10 @@ svm:
   cron: '*/15 * * * *'
   class: SvmWorker
 
-statistics:
+metric:
   name: Update stats of token
   cron: "0 * * * *"
-  class: StatisticsWorker
+  class: MetricWorker
 
 links_title:
   name: Crawler title to all public tokens at 4h

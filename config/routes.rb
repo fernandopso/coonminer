@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       resources :languages, only: :index, path: 'idiomas'
       resources :locations, only: :index, path: 'lugares'
       resources :mentions, only: :index, path: 'mencoes'
-      resources :statistics, only: :index, path: 'numeros'
+      resources :metrics, only: :index, path: 'numeros'
       resources :mining, only: :index, path: 'resumo' do
         member do
           patch :classify

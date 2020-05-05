@@ -84,29 +84,7 @@ ActiveRecord::Schema.define(version: 2018_07_09_204756) do
     t.index ["token_id"], name: "index_mentions_on_token_id"
   end
 
-  create_table "newsletters", force: :cascade do |t|
-    t.string "email"
-    t.bigint "token_id", null: false
-    t.index ["token_id"], name: "index_newsletters_on_token_id"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "username", null: false
-    t.string "image"
-    t.string "profile_image"
-    t.string "profile_color"
-    t.integer "df", default: 0, null: false
-    t.integer "tweets_count"
-    t.integer "followers_count"
-    t.integer "following_count"
-    t.bigint "token_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["token_id"], name: "index_profiles_on_token_id"
-  end
-
-  create_table "statistics", id: :serial, force: :cascade do |t|
+  create_table "metrics", id: :serial, force: :cascade do |t|
     t.integer "token_id", null: false
     t.float "percent_positive"
     t.float "percent_neutral"
@@ -133,7 +111,29 @@ ActiveRecord::Schema.define(version: 2018_07_09_204756) do
     t.integer "negative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["token_id"], name: "index_statistics_on_token_id"
+    t.index ["token_id"], name: "index_metrics_on_token_id"
+  end
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string "email"
+    t.bigint "token_id", null: false
+    t.index ["token_id"], name: "index_newsletters_on_token_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "username", null: false
+    t.string "image"
+    t.string "profile_image"
+    t.string "profile_color"
+    t.integer "df", default: 0, null: false
+    t.integer "tweets_count"
+    t.integer "followers_count"
+    t.integer "following_count"
+    t.bigint "token_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token_id"], name: "index_profiles_on_token_id"
   end
 
   create_table "tokens", id: :serial, force: :cascade do |t|
@@ -228,9 +228,9 @@ ActiveRecord::Schema.define(version: 2018_07_09_204756) do
   add_foreign_key "links", "tokens"
   add_foreign_key "locations", "tokens"
   add_foreign_key "mentions", "tokens"
+  add_foreign_key "metrics", "tokens"
   add_foreign_key "newsletters", "tokens"
   add_foreign_key "profiles", "tokens"
-  add_foreign_key "statistics", "tokens"
   add_foreign_key "tokens", "categories"
   add_foreign_key "words", "tokens"
 end

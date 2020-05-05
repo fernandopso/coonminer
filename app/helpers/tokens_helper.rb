@@ -40,9 +40,9 @@ module TokensHelper
   def title_for_token(token)
     t(
       'tokens.label_percent',
-      count_positive: token.statistics.percent_positive, rate_positive: t('positive'),
-      count_neutral:  token.statistics.percent_neutral,  rate_neutral:  t('neutral'),
-      count_negative: token.statistics.percent_negative, rate_negative: t('negative')
+      count_positive: token.metric.percent_positive, rate_positive: t('positive'),
+      count_neutral:  token.metric.percent_neutral,  rate_neutral:  t('neutral'),
+      count_negative: token.metric.percent_negative, rate_negative: t('negative')
     )
   end
 
