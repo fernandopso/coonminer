@@ -1,6 +1,6 @@
 = form_for Token.new, as: :sample, url: sample_index_path do |f|
   .input-group.cm-search-input.input-append
-    = f.text_field :word, class: 'form-control', placeholder: t('landing.title'), required: true
+    = f.text_field :word, class: 'form-control', placeholder: t('landing.mining'), required: true
     %span.input-group-addon
       %button{ type: 'submit' }
         %span.glyphicon.glyphicon-search
