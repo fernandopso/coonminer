@@ -1,5 +1,5 @@
 .row{ style: 'margin-top: -20px;' }
   .text-center
-    .col-xs-4= t('landing.details.positive', amout: number_with_precision(token.statistics.percent_positive, precision: 0))
-    .col-xs-4= t('landing.details.neutral', amout: number_with_precision(token.statistics.percent_neutral, precision: 0))
-    .col-xs-4= t('landing.details.negative', amout: number_with_precision(token.statistics.percent_negative, precision: 0))
+    .col-xs-4= t('landing.details.positive', amout: number_with_precision(token.metric.percent_positive, precision: 0))
+    .col-xs-4= t('landing.details.neutral', amout: number_with_precision(token.metric.percent_neutral, precision: 0))
+    .col-xs-4= t('landing.details.negative', amout: number_with_precision(token.metric.percent_negative, precision: 0))

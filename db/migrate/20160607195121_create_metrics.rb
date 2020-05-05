@@ -1,6 +1,6 @@
-class CreateStatistics < ActiveRecord::Migration[5.0]
+class CreateMetrics < ActiveRecord::Migration[5.0]
   def change
-    create_table :statistics do |t|
+    create_table :metrics do |t|
       t.references :token, foreign_key: true, null: false
       t.float :percent_positive
       t.float :percent_neutral

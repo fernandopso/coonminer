@@ -1,16 +1,16 @@
 .row{ id: "tweets_details" }
   .col-md-3.text-center
-    %p= token.statistics.user_rated
+    %p= token.metric.user_rated
     .small= t("filter.user_public")
   .col-md-2.text-center.text-primary
-    %p= token.statistics.user_rated_positive
+    %p= token.metric.user_rated_positive
     .small= t("positive")
   .col-md-2.text-center.text-muted
-    %p= token.statistics.user_rated_neutral
+    %p= token.metric.user_rated_neutral
     .small= t("neutral")
   .col-md-2.text-center.text-danger
-    %p= token.statistics.user_rated_negative
+    %p= token.metric.user_rated_negative
     .small= t("negative")
   .col-md-3.text-center
-    %p= token.statistics.amount
+    %p= token.metric.amount
     .small= t("total")

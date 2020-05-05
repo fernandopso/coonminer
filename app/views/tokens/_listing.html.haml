@@ -14,7 +14,7 @@
           %tr
             %td= link_to token.word, token_collect_index_path(token.uuid)
             %td.text-center= t("languages.#{ token.lang }")
-            %td.text-center= token.statistics.amount
+            %td.text-center= token.metric.amount
             %td.text-center= token.accuracy_human
             %td.text-center{ class: "#{ token.keep_cron_crawler ? 'success' : 'danger' }" }
               .glyphicon{ class: "glyphicon-#{ token.keep_cron_crawler ? 'ok' : 'remove' }" }

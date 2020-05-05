@@ -18,7 +18,7 @@
                      2]);
 
     var options = {
-      title: "#{t("tokens.charts.rated_by_user", count: @token.statistics.user_rated)}",
+      title: "#{t("tokens.charts.rated_by_user", count: @token.metric.user_rated)}",
       height: 300,
       bar: {groupWidth: "95%"},
       legend: { position: "none" },
@@ -48,7 +48,7 @@
                      2]);
 
     var options = {
-      title: "#{t("tokens.charts.rated_by_svm", count: @token.statistics.svm_rated)}",
+      title: "#{t("tokens.charts.rated_by_svm", count: @token.metric.svm_rated)}",
       height: 300,
       bar: {groupWidth: "95%"},
       legend: { position: "none" },

@@ -22,7 +22,7 @@
   = link_to token_tweets_path(token.uuid), style: "border-color: #fff" do
     %img{ src: token.avatar, class: 'img-circle' }
     %h4= t('username_as_twitter', username: token.username) if token.username && !token.username.blank?
-    %h5.small= t('landing.subtitle', amount: token.statistics.amount, token: token.word)
+    %h5.small= t('landing.subtitle', amount: token.metric.amount, token: token.word)
 
 .col-md-6
   %div{ :id => "locations", :style => "width: 100%; height: 160px;"}

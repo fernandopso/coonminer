@@ -1,7 +1,7 @@
 .progress
-  .progress-bar.progress-bar-success{:style => "width: #{token.statistics.percent_positive.to_i}%"}
+  .progress-bar.progress-bar-success{:style => "width: #{token.metric.percent_positive.to_i}%"}
     %span.sr-only
-  .progress-bar.progress-bar-warning.progress-bar-striped{:style => "width: #{token.statistics.percent_neutral.to_i}%"}
+  .progress-bar.progress-bar-warning.progress-bar-striped{:style => "width: #{token.metric.percent_neutral.to_i}%"}
     %span.sr-only
-  .progress-bar.progress-bar-danger{:style => "width: #{token.statistics.percent_negative.to_i}%"}
+  .progress-bar.progress-bar-danger{:style => "width: #{token.metric.percent_negative.to_i}%"}
     %span.sr-only

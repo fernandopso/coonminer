@@ -15,9 +15,9 @@ class SampleWorker
 
       Collect::Tweets.new(token).call
 
-      logger.info "Perform async StatisticsWorker to #{token.id}"
+      logger.info "Perform async MetricWorker to #{token.id}"
 
-      StatisticsWorker.perform_async(token.id)
+      MetricWorker.perform_async(token.id)
 
       token.collected!
 

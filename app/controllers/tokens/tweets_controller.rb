@@ -18,13 +18,13 @@ module Tokens
     end
 
     def set_charts
-      @user_positive = ['Positive', @token.statistics.user_rated_positive, '#337ab7']
-      @user_neutral  = ['Neutral',  @token.statistics.user_rated_neutral, '#fcf8e3']
-      @user_negative = ['Negative', @token.statistics.user_rated_negative, '#a94442']
+      @user_positive = ['Positive', @token.metric.user_rated_positive, '#337ab7']
+      @user_neutral  = ['Neutral',  @token.metric.user_rated_neutral, '#fcf8e3']
+      @user_negative = ['Negative', @token.metric.user_rated_negative, '#a94442']
 
-      @svm_positive = ['Positive', @token.statistics.svm_rated_positive, '#337ab7']
-      @svm_neutral  = ['Neutral',  @token.statistics.svm_rated_neutral, '#fcf8e3']
-      @svm_negative = ['Negative', @token.statistics.svm_rated_negative, '#a94442']
+      @svm_positive = ['Positive', @token.metric.svm_rated_positive, '#337ab7']
+      @svm_neutral  = ['Neutral',  @token.metric.svm_rated_neutral, '#fcf8e3']
+      @svm_negative = ['Negative', @token.metric.svm_rated_negative, '#a94442']
     end
   end
 end

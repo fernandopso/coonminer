@@ -10,7 +10,7 @@ module Tokens
     def update
       @tweet = @token.tweets.find(params[:id])
       @tweet.update(tweet_params)
-      StatisticsToken.new(@token).update
+      MetricToken.new(@token).update
     end
 
     private
