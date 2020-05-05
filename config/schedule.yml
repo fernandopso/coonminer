@@ -1,8 +1,3 @@
-collect:
-  name: Collect tweets every minute
-  cron: "*/1 * * * *"
-  class: Crawlers::Tokens::CollectTweetsWorker
-
 svm:
   name: Predict with SVM every 15 minutes
   cron: '*/15 * * * *'
@@ -17,3 +12,8 @@ links_title:
   name: Crawler title to all public tokens at 4h
   cron: "0 4 * * *"
   class: CrawlerLinksWorker
+
+# collect:
+#   name: Collect tweets every minute
+#   cron: "*/1 * * * *"
+#   class: Crawlers::Tokens::CollectTweetsWorker
