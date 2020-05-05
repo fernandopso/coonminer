@@ -21,10 +21,6 @@ You need use the `.env` file (link as `.env.sample`) to run with `docker-compose
 
     COONMINER_ACCESS_TOKEN_SECRET
 
-- And a secret key to your application:
-
-    COONMINER_SECRET_KEY
-
 ## License
 
 [MIT License](http://www.opensource.org/licenses/MIT).

@@ -1,10 +1,11 @@
 en:
   landing:
-    title: Monitoração em tempo real no Twitter
+    title: Análise de dados em tempo real no Twitter
     tokens: Pré candidatos a presidência do Brasil
     subtitle: "%{amount} tweets analisados sobre %{token}"
     how_classify: "Como você classifica o tweet sobre %{token}?"
     search: Buscar
+    mining: O que você quer analisar no Twitter?
 
     newsletter:
       subtitle: Receba análises por email sobre %{word}

@@ -23,4 +23,5 @@
 - else
   - if @token
     %li
-      = link_to t('monitor'), '#', onclick: "$('.modal').modal('show');", style: 'font-size: 20px'
+      = link_to '#', onclick: "$('.modal').modal('show');", style: 'font-size: 20px' do
+        .glyphicon.glyphicon-envelope
