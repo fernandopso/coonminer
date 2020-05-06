@@ -1,0 +1,8 @@
+.text-center
+  %h3.text-center Últimas Buscas
+  - Token.publics.collect_at_desc.includes(:metric).limit(5).each do |token|
+    = link_to token_mining_index_path(token.uuid), style: "border-color: #fff", class: "display-stats-on-hover", id: token.uuid do
+      %h5
+        %b= token.word
+      %p
+        = t('metric.amount', amount: token.metric.amount.to_i)
