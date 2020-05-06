@@ -12,3 +12,4 @@ en:
     last_24_hours: "%{amount} tweets nas últimas 24 horas"
     last_3_days: "%{amount} tweets nos últimos 3 dias"
     last_7_days: "%{amount} tweets nos últimos 7 dias"
+    amount: "%{amount} tweets analisados"
