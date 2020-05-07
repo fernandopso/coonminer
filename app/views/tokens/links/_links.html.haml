@@ -9,11 +9,11 @@
 
           %hr
             .row.small
-              .col-xs-6.col-sm-3
+              .col-xs-3
                 = succeed ':' do
                   %b= Token.human_attribute_name(:df)
                 = link.df
-              .col-xs-6.col-sm-4
+              .col-xs-9
                 = succeed ':' do
                   %b= Token.human_attribute_name(:updated_at)
                 = link.updated_at
