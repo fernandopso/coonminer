@@ -1,3 +1,8 @@
-= render partial: 'tweets/filter', locals: { path: token_users_path(params[:token_id]) }
-%div{ style: 'margin-top: -15px' }
-= render partial: 'listing', locals: { users: @users }
+.row
+  .col-xs-12.col-sm-5
+    = render partial: 'tweets/filter', locals: { path: token_users_path(params[:token_id]) }
+    = render partial: 'users', locals: { users: @users }
+
+  .col-sm-7.hidden-xs
+    = render partial: 'tokens/tweets/accuracy', locals: { token: @token, amount: @users.count, model_name: t('sidebar.users') }
+

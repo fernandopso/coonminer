@@ -1,7 +1,7 @@
 .row
   - if users.any?
     - users.each do |user|
-      .col-sm-6
+      .col-xs-12.text-align-webkit-center
         %br
         - profile_path_for_twitter = "https://twitter.com/#{user.username}"
         .twitter-div
