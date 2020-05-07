@@ -28,7 +28,8 @@ Rails.application.routes.draw do
       resources :locations, only: :index, path: 'lugares'
       resources :mentions, only: :index, path: 'mencoes'
       resources :metrics, only: :index, path: 'numeros'
-      resources :mining, only: :index, path: 'resumo' do
+      resources :mining, only: :index, path: 'resumo'
+      resources :dashboard, only: :index, path: 'classificar' do
         member do
           patch :classify
         end

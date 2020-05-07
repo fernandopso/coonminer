@@ -23,7 +23,7 @@ class Tweet < ActiveRecord::Base
   scope :svm_negative, -> { where(rate_svm: NEGATIVE) }
   scope :svm_neutral, ->  { where(rate_svm: NEUTRAL)  }
 
-  scope :rate_by_anyone, -> { where.not(rate_open: nil) }
+  scope :not_rated_by_anyone, -> { where(rate_open: nil) }
 
   scope :positive, -> { where('rate=? OR rate_svm=?', POSITIVE, POSITIVE) }
   scope :negative, -> { where('rate=? OR rate_svm=?', NEGATIVE, NEGATIVE) }
