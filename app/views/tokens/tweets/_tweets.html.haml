@@ -1,16 +1,17 @@
 - tweets.each do |tweet|
-  %blockquote.twitter-tweet
-    = tweet.text
-    %a{ href: tweet.url }
+  .text-align-webkit-center
+    %blockquote.twitter-tweet
+      = tweet.text
+      %a{ href: tweet.url }
 
-  .panel.panel-default.xs-padding
-    .panel-body.xs-panel
-      .col-xs-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate)}" }
-        %h5
-          %b= rate_tag(tweet.rate)
-        = t("rate.rated")
+    .panel.panel-default.xs-padding
+      .panel-body.xs-panel
+        .col-xs-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate)}" }
+          %h5
+            %b= rate_tag(tweet.rate)
+          = t("rate.rated")
 
-      .col-xs-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate_svm)}" }
-        %h5
-          %b= rate_tag(tweet.rate_svm)
-        = t("rate.rated_by_svm")
+        .col-xs-6.text-center{ class: "bg-#{rate_color_tag(tweet.rate_svm)}" }
+          %h5
+            %b= rate_tag(tweet.rate_svm)
+          = t("rate.rated_by_svm")

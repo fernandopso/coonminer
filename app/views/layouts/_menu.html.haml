@@ -31,6 +31,10 @@
     %i.glyphicon.glyphicon-user
     = t('sidebar.users')
 
+  = link_to token_dashboard_index_path(params[:token_id]), class: 'btn btn-default home-button' do
+    %i.glyphicon.glyphicon-dashboard
+    = t('sidebar.classify')
+
 %br
 
 - if user_signed_in? && current_user.owner?(params[:token_id])
