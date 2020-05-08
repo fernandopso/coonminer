@@ -4,14 +4,14 @@ svm:
   class: SvmWorker
 
 metric:
-  name: Update stats of token
-  cron: "0 * * * *"
+  name: Update stats of token at 00:00
+  cron: "0 0 * * *"
   class: MetricWorker
 
-links_title:
-  name: Crawler title to all public tokens at 4h
-  cron: "0 4 * * *"
-  class: CrawlerLinksWorker
+# links_title:
+#   name: Crawler title to all public tokens at 4h
+#   cron: "0 4 * * *"
+#   class: CrawlerLinksWorker
 
 # collect:
 #   name: Collect tweets every minute
