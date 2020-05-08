@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby

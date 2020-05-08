@@ -8,11 +8,6 @@ rackup      DefaultRackup
 port        ENV['PORT']     || 3000
 environment ENV['RACK_ENV'] || 'development'
 
-before_fork do
-  puts "Puma master process about to fork. Closing existing Active record connections."
-  ActiveRecord::Base.connection.disconnect!
-end
-
 on_worker_boot do
   # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
   ActiveSupport.on_load(:active_record) do
