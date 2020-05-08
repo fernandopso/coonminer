@@ -16,6 +16,10 @@ dump.rdb
 /log/*
 !/log/.keep
 /tmp
+/tmp/*
+/tmp/pids/*
+!/tmp/pids
+!/tmp/pids/.keep
 
 /public/assets/
 
