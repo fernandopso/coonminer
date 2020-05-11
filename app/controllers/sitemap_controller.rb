@@ -1,5 +1,5 @@
 class SitemapController < ApplicationController
   def index
-    @tokens = Token.publics.active
+    @tokens = Token.publics
   end
 end
