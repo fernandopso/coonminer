@@ -3,16 +3,15 @@
   color: #f8f8f8;
   position: relative;
   background-color: #021427;
-  padding-top: 7%;
+  padding-top: 5%;
   padding-bottom: 5%;
   margin: -15px;
-  margin-block-end: 40px;
 }
 
 .intro-header > h1 {
   margin: 0;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-  font-size: 4em;
+  font-size: 3em;
 }
 
 @media (max-width: 623px) {

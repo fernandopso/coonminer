@@ -1,0 +1,5 @@
+- token = Token.publics.collect_at_desc.limit(5).sample
+.col-xs-12.text-center
+  %section
+    .border-btn
+      = link_to 'Veja um exemplo de análise', token_mining_index_path(token.uuid), class: 'btn-example', data: { disable_with: t('wait') }
