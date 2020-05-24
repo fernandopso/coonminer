@@ -10,7 +10,7 @@ metric:
 
 collect:
   name: Collect tweets every minute
-  cron: "*/1 * * * *"
+  cron: "*/3 * * * *"
   class: Crawlers::Tokens::CollectTweetsWorker
 
 # links_title:

@@ -15,7 +15,7 @@ class CreateTweetWorker
     ActiveRecord::Base.connection_pool.with_connection do
       tweet = new_tweet(tweet_from_twitter, tweet_url, token_id)
 
-      Rails.logger.info("Build #{tweet} to token_id: #{token_id}")
+      Rails.logger.info("Build tweet: #{tweet.text} to token_id: #{token_id}")
 
       DocumentFrequency
         .new(tweet, token_id, tweet_from_twitter['user'])
