@@ -4,7 +4,7 @@ module Admin
     before_action :require_admin
 
     def index
-      @tokens = Token.active.cron_active.collect_at_asc
+      @tokens = Token.cron_active.collect_at_asc.includes([:metric])
     end
   end
 end

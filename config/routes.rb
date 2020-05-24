@@ -86,7 +86,7 @@ Rails.application.routes.draw do
         resources :newsletter, only: %i[index]
         resources :categories
         resources :token, only: %i[index]
-        resources :samples, only: %i[index]
+        resources :samples, only: %i[index update]
       end
     end
   end
