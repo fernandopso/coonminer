@@ -56,6 +56,7 @@ Rails.application.routes.draw do
 
   resources :home, only: :index
   resources :sample, only: :create
+  resources :example, only: :index
   resources :contacts, only: %w[index new create] do
     collection do
       get :success
@@ -85,7 +86,7 @@ Rails.application.routes.draw do
         resources :newsletter, only: %i[index]
         resources :categories
         resources :token, only: %i[index]
-        resources :samples, only: %i[index]
+        resources :samples, only: %i[index update]
       end
     end
   end

@@ -14,6 +14,7 @@
       %th.small.text-center= t("tweets.options_for_filter_date.last_7_days")
       %th.small.text-center= t("tokens.show.tweets_to_delete")
       %th.small.text-center= Token.human_attribute_name(:keep_cron_crawler)
+      %th
   %tbody
     - tokens.each do |token|
       %tr
@@ -32,3 +33,9 @@
         %td.small.text-center= token.metric.tweets_to_delete
         %td.small.text-center{ class: "#{ token.keep_cron_crawler ? 'success' : 'danger' }" }
           .glyphicon{ class: "glyphicon-#{ token.keep_cron_crawler ? 'ok' : 'remove' }" }
+        %td.text-center
+          = form_for token, url: sample_path(token.uuid), method: :put do |f|
+            - if token.enable
+              = f.submit t('tokens.stop_cron_crawler'), class: "btn btn-xs btn-danger"
+            - else
+              = f.submit t('tokens.keep_cron_crawler'), class: "btn btn-xs btn-default"

@@ -8,12 +8,12 @@ metric:
   cron: "0 0 * * *"
   class: MetricWorker
 
+collect:
+  name: Collect tweets every minute
+  cron: "*/1 * * * *"
+  class: Crawlers::Tokens::CollectTweetsWorker
+
 # links_title:
 #   name: Crawler title to all public tokens at 4h
 #   cron: "0 4 * * *"
 #   class: CrawlerLinksWorker
-
-# collect:
-#   name: Collect tweets every minute
-#   cron: "*/1 * * * *"
-#   class: Crawlers::Tokens::CollectTweetsWorker
