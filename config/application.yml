@@ -13,6 +13,6 @@ test:
 production:
   <<: *default
   max_tweets_to_save:
-    free: 1000
-    paid: 1000
+    free: 10000
+    paid: 10000
   max_tweets_to_collect: 1500
