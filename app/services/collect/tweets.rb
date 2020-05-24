@@ -19,7 +19,7 @@ module Collect
         CreateTweetWorker.perform_async(t.as_json, t.url.to_s, token.id)
       end
 
-      logger.info "Perform async MetricWorker to #{token.id}"
+      Rails.logger.info "Perform async MetricWorker to #{token.id}"
 
       MetricWorker.perform_async(token.id)
     end
