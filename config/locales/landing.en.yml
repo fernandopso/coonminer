@@ -4,7 +4,7 @@ en:
     example: Example
     tokens: Pré candidatos a presidência do Brasil
     subtitle: "%{amount} tweets analisados sobre %{token}"
-    how_classify: "Como você classifica o tweet sobre %{token}?"
+    how_classify: "How do you rate the tweet about %{token}?"
     search: Buscar
     mining: What do you want to analyze? Use
 
@@ -13,11 +13,11 @@ en:
       create: Inscrever
 
     answer:
-      negative: Não apoia
-      neutral: Não expressa opinião
-      positive: Apoia
+      negative: Negative
+      neutral: Neutral
+      positive: Positive
 
     details:
-      positive: "%{amout} positivo"
-      neutral: "%{amout} neutro"
-      negative: "%{amout} negativo"
+      positive: "%{amout} positive"
+      neutral: "%{amout} neutral"
+      negative: "%{amout} negative"

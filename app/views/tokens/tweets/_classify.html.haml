@@ -1,0 +1,16 @@
+.row
+  %h4
+    .small= t('landing.how_classify', token: @token.word)
+  %br
+  .border-btn
+    .col-xs-4
+      = link_to classify_token_dashboard_path(token.uuid, tweet.uuid, positive_params), method: :patch, class: 'answer-btn positive-color', data: { disable_with: t('landing.answer.positive') } do
+        = t('landing.answer.positive')
+    .col-xs-4
+      = link_to classify_token_dashboard_path(token.uuid, tweet.uuid, neutral_params), method: :patch, class: 'answer-btn neutral-color', data: { disable_with: t('landing.answer.negative') } do
+        = t('landing.answer.neutral')
+    .col-xs-4  
+      = link_to classify_token_dashboard_path(token.uuid, tweet.uuid, negative_params), method: :patch, class: 'answer-btn negative-color', data: { disable_with: t('landing.answer.negative') } do
+        = t('landing.answer.negative')
+  %br
+  %br

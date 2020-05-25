@@ -9,7 +9,7 @@ module Tokens
     def classify
       tweet_classify.update(params_classify)
 
-      redirect_to token_dashboard_index_path(params[:token_id])
+      redirect_to token_tweets_path(params[:token_id])
     end
 
     private

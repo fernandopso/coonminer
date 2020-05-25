@@ -1,8 +1,8 @@
 %nav.menu
-  %input#menu-open.menu-open{href: "#", name: "menu-open", type: "checkbox"}
+  %input#menu-open.menu-open{href: "#", name: "menu-open", type: "checkbox", checked: controller_name != 'tweets'}
   %label.menu-open-button{:for => "menu-open"}
-    - if controller_name == 'mining'
-      %i.glyphicon.glyphicon-star.menu-icon-active
+    - if controller_name == 'tweets'
+      %i.menu-icon-active.glyphicon.glyphicon-dashboard
     - elsif controller_name == 'locations'
       %i.glyphicon.glyphicon-globe.menu-icon-active
     - elsif controller_name == 'hashtags'
@@ -15,10 +15,6 @@
       %i.menu-icon-active.glyphicon.glyphicon-link
     - elsif controller_name == 'users'
       %i.menu-icon-active.glyphicon.glyphicon-user
-    - elsif controller_name == 'tweets'
-      %i.menu-icon-active.glyphicon.glyphicon-dashboard
-  = link_to token_mining_index_path(params[:token_id]), class: 'menu-item' do
-    %i.glyphicon.glyphicon-star{ class: "#{'menu-icon-active' if controller_name == 'mining'}" }
   = link_to token_tweets_path(params[:token_id]), class: 'menu-item' do
     %i.glyphicon.glyphicon-dashboard{ class: "#{'menu-icon-active' if controller_name == 'tweets'}" }
   = link_to token_locations_path(params[:token_id]), class: 'menu-item' do

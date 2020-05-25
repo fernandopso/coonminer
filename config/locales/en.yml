@@ -25,8 +25,8 @@ en:
   home: Inicio
   login: Login
   logout: Sair
-  negative: Não
-  neutral: Não Sei
+  negative: Negative
+  neutral: Neutral
   not_rated: Não classificado
   make_public: Tornar público
   make_private: Tornar privado
@@ -36,7 +36,7 @@ en:
   others: Outros
   overview: Resumo
   process: Process
-  positive: Sim
+  positive: Positive
   rated: Classificado
   recent: Recente
   restore: Restaurar
@@ -70,9 +70,9 @@ en:
     tokens_disabled: Deleted Tokens
 
   rate:
-    rated: User
+    rated: Public
     rated_by_svm: Coon Miner
-    not_rated: Não classificado
+    not_rated: Not rated
 
   process:
     vocabulary: Vocabulary

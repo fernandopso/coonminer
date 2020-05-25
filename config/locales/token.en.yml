@@ -35,12 +35,12 @@ en:
 
     charts:
       rated_by_user: Classificação publica
-      rated_by_svm: CoonMiner
+      rated_by_svm: Coon Miner
 
     accuracy:
-      title: Acurácia
-      rated: Classificados
-      validade: Verificados
+      title: Accuracy
+      rated: Rated
+      validade: Validade
 
     show:
       rated_by_user: Classificado pelo Administrador
