@@ -1,5 +1,5 @@
 en:
-  title: CoonMiner
+  title: Coon Miner
   title_for_token: "%{token} no Twitter"
   description: Machine learning and data mining for public tweets
   description_for_token: "%{token} on Twitter - Machine learning and data mining for public tweets"
