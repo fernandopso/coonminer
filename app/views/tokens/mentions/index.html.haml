@@ -1,6 +1,5 @@
 .row
   .col-xs-12.col-sm-5
-    = render partial: 'tweets/filter', locals: { path: token_mentions_path(params[:token_id]) }
     #chart_xs.hidden-sm.hidden-md.hidden-lg
     = render partial: 'mentions', locals: { mentions: @mentions }
 

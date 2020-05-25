@@ -8,9 +8,9 @@ en:
   username_as_twitter: "@%{username}"
 
   active: Ativo
-  all_time: Tempo
-  all_rates: Classificação
-  all_langs: Idiomas
+  all_time: Time
+  all_rates: All Rates
+  all_langs: Languages
   analytics: Análises
   are_you_sure: Você tem certeza?
   attention: Atenção!
@@ -62,17 +62,17 @@ en:
     title: Sobre
 
   filter:
-    title: Filtrar
-    svm: CoonMiner Classificou
+    title: Filter
+    svm: All Coon Miner Rate
     user: Filtrar por classificação do administrador
-    user_public: Classificação pública
+    user_public: All Open Rate
     tokens_active: Activated Tokens
     tokens_disabled: Deleted Tokens
 
   rate:
     rated: Public
     rated_by_svm: Coon Miner
-    not_rated: Not rated
+    not_rated: Not Rated
 
   process:
     vocabulary: Vocabulary

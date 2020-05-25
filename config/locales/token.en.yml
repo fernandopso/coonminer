@@ -34,7 +34,7 @@ en:
     label_percent: "%{count_positive}% %{rate_positive} | %{count_neutral}% %{rate_neutral} | %{count_negative}% %{rate_negative}"
 
     charts:
-      rated_by_user: Classificação publica
+      rated_by_user: Open Rate
       rated_by_svm: Coon Miner
 
     accuracy:

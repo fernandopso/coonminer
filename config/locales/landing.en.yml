@@ -9,8 +9,8 @@ en:
     mining: What do you want to analyze? Use
 
     newsletter:
-      subtitle: Receba análises por email sobre %{word}
-      create: Inscrever
+      subtitle: Receive email analysis about %{word}
+      create: Subscribe
 
     answer:
       negative: Negative

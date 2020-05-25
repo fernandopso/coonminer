@@ -25,19 +25,19 @@ en:
     classified: Classified
 
     options_for_mining_index_page:
-      all: Todos
-      unrated: Sem Classificação
-      positive: Apoia
-      neutral: Neutro
-      negative: Não Apoia
+      all: All
+      unrated: Not Rated
+      positive: Positive
+      neutral: Neutral
+      negative: Negative
 
     options_for_filter_date:
       today: Today
-      last_3_hours: 3 horas
-      last_12_hours: 12 horas
-      last_24_hours: 24 horas
-      last_3_days: 3 dias
-      last_7_days: 7 dias
+      last_3_hours: 3 hours
+      last_12_hours: 12 hourss
+      last_24_hours: 24 hourss
+      last_3_days: 3 days
+      last_7_days: 7 days
 
     users:
       title: Pessoas
