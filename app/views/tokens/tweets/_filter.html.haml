@@ -1,9 +1,6 @@
-.panel.panel-default.xs-padding
-  .panel-body.xs-panel
-    %p
-    = form_tag token_tweets_path(params[:token_id]), method: :get do
-      .row
-        .col-xs-6
-          %p= select_tag :rate_user, options_for_rate(params[:rate_user], :user), class: 'form-control submitable', style: 'padding: 0px 12px;', include_blank: t('filter.user_public')
-        .col-xs-6
-          %p= select_tag :rate_svm, options_for_rate(params[:rate_svm], :svm), class: 'form-control submitable', include_blank: t('filter.svm')
+= form_tag token_tweets_path(params[:token_id]), method: :get do
+  .row
+    .col-xs-6
+      %p= select_tag :rate_open, options_for_rate(params[:rate_open], :open), class: 'form-control submitable', style: 'padding: 0px 12px;', include_blank: t('filter.user_public')
+    .col-xs-6
+      %p= select_tag :rate_svm, options_for_rate(params[:rate_svm], :svm), class: 'form-control submitable', include_blank: t('filter.svm')

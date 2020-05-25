@@ -4,17 +4,17 @@ module Tokens
     before_action :set_charts
 
     def index
-      @tweets = @token.tweets.send(user_rate).send(svm_rate).publish_at_desc.paginate(page: params[:page], per_page: 50)
+      @tweets = @token.tweets.send(rate_open).send(rate).publish_at_desc.paginate(page: params[:page], per_page: 50)
     end
 
     private
 
-    def user_rate
-      params['rate_user'].blank? ? 'all' : params['rate_user']
+    def rate_open
+      params['rate_open'].blank? ? 'all' : params['rate_open']
     end
 
-    def svm_rate
-      params['rate_svm'].blank? ? 'all' : params['rate_svm']
+    def rate
+      params['rate'].blank? ? 'all' : params['rate']
     end
 
     def set_charts

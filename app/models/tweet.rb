@@ -18,10 +18,15 @@ class Tweet < ActiveRecord::Base
   scope :user_negative, -> { where(rate: NEGATIVE) }
   scope :user_neutral, ->  { where(rate: NEUTRAL)  }
 
-  scope :svm_unrated, ->  { where(rate_svm: nil) }
-  scope :svm_positive, -> { where(rate_svm: POSITIVE) }
-  scope :svm_negative, -> { where(rate_svm: NEGATIVE) }
-  scope :svm_neutral, ->  { where(rate_svm: NEUTRAL)  }
+  scope :coonminer_unrated, ->  { where(rate_svm: nil) }
+  scope :coonminer_positive, -> { where(rate_svm: POSITIVE) }
+  scope :coonminer_negative, -> { where(rate_svm: NEGATIVE) }
+  scope :coonminer_neutral, ->  { where(rate_svm: NEUTRAL)  }
+
+  scope :open_unrated, ->  { where(rate_open: nil) }
+  scope :open_positive, -> { where(rate_open: POSITIVE) }
+  scope :open_negative, -> { where(rate_open: NEGATIVE) }
+  scope :open_neutral, ->  { where(rate_open: NEUTRAL)  }
 
   scope :not_rated_by_anyone, -> { where(rate_open: nil) }
 

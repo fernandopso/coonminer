@@ -7,10 +7,9 @@
         %span.icon-bar
       = link_to t("title"), root_path, class: "navbar-brand"
       - if @token.present? && @token.valid?
-        %svg.gb_vc.navbar-brand{ height: "24px", viewBox: "0 0 24 24", width: "24px", xmlns: "http://www.w3.org/2000/svg" }
-          %path{ d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" }
-          %path{ d: "M0 0h24v24H0z", fill: "none" }
-        = link_to @token.word, token_mining_index_path(@token.uuid), class: "navbar-brand"
+        .navbar-brand
+          |
+        .navbar-brand= link_to @token.word, token_mining_index_path(@token.uuid)
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         = render partial: 'layouts/navbar/settings'

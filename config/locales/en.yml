@@ -1,5 +1,5 @@
 en:
-  title: CoonMiner
+  title: Coon Miner
   title_for_token: "%{token} no Twitter"
   description: Machine learning and data mining for public tweets
   description_for_token: "%{token} on Twitter - Machine learning and data mining for public tweets"
@@ -8,9 +8,9 @@ en:
   username_as_twitter: "@%{username}"
 
   active: Ativo
-  all_time: Tempo
-  all_rates: Classificação
-  all_langs: Idiomas
+  all_time: Time
+  all_rates: All Rates
+  all_langs: Languages
   analytics: Análises
   are_you_sure: Você tem certeza?
   attention: Atenção!
@@ -25,8 +25,8 @@ en:
   home: Inicio
   login: Login
   logout: Sair
-  negative: Não
-  neutral: Não Sei
+  negative: Negative
+  neutral: Neutral
   not_rated: Não classificado
   make_public: Tornar público
   make_private: Tornar privado
@@ -36,7 +36,7 @@ en:
   others: Outros
   overview: Resumo
   process: Process
-  positive: Sim
+  positive: Positive
   rated: Classificado
   recent: Recente
   restore: Restaurar
@@ -62,17 +62,17 @@ en:
     title: Sobre
 
   filter:
-    title: Filtrar
-    svm: CoonMiner Classificou
+    title: Filter
+    svm: All Coon Miner Rate
     user: Filtrar por classificação do administrador
-    user_public: Classificação pública
+    user_public: All Open Rate
     tokens_active: Activated Tokens
     tokens_disabled: Deleted Tokens
 
   rate:
-    rated: User
+    rated: Public
     rated_by_svm: Coon Miner
-    not_rated: Não classificado
+    not_rated: Not Rated
 
   process:
     vocabulary: Vocabulary

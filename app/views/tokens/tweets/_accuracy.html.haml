@@ -1,10 +1,21 @@
 .row
+  .col-xs-12
+    .panel-body
+      = render partial: 'layouts/menu'
+
+.row
   .col-sm-12
     .panel.panel-default
       .panel-body.text-center.small
         .col-xs-3
-          %h5= amount
-          = model_name
+          %h5
+            - if controller_name == 'tweets'
+              = @tweets.count
+            - elsif controller_name == 'users'
+              =  @users.count
+            - else
+              = @chart_options.count
+          %b= controller_name
         .col-xs-3
           %h5= token.metric.amount_rated
           = t('tokens.accuracy.rated')

@@ -1,11 +1,8 @@
-.panel.panel-default.xs-padding
-  .panel-body.xs-panel
-    %p
-    = form_tag path, method: :get do
-      .row
-        .col-xs-4
-          %p= select_tag :date, options_filter_date(params[:date]), class: 'form-control submitable', include_blank: t('all_time')
-        .col-xs-4
-          %p= select_tag :lang, options_for_select(@token.options_for_languages, selected: params[:lang]), class: 'form-control submitable', include_blank: t('all_langs')
-        .col-xs-4
-          %p= select_tag :rate, options_filter_for_all_rates(params[:rate]), class: 'form-control submitable', include_blank: t('all_rates')
+= form_tag path, method: :get do
+  .row
+    .col-xs-4
+      %p= select_tag :date, options_filter_date(params[:date]), class: 'form-control submitable', include_blank: t('all_time')
+    .col-xs-4
+      %p= select_tag :lang, options_for_select(@token.options_for_languages, selected: params[:lang]), class: 'form-control submitable', include_blank: t('all_langs')
+    .col-xs-4
+      %p= select_tag :rate, options_filter_for_all_rates(params[:rate]), class: 'form-control submitable', include_blank: t('all_rates')

@@ -3,12 +3,7 @@
 - else
   .row
     .col-xs-12.col-sm-5
-      = render partial: 'tweets/filter', locals: { path: token_languages_path(params[:token_id]) }
       #chart_xs.hidden-sm.hidden-md.hidden-lg
       = render partial: 'languages', locals: { languages: @languages }
-
-    .col-sm-7.hidden-xs
-      = render partial: 'tokens/tweets/accuracy', locals: { token: @token, amount: @languages.count, model_name: Language.model_name.human }
-      #chart
 
   = render partial: 'charts/pie', locals: { options: @chart_options }

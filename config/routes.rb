@@ -24,18 +24,18 @@ Rails.application.routes.draw do
       end
       resources :classify, only: %w[index update]
       resources :hashtags, only: :index
-      resources :languages, only: :index, path: 'idiomas'
-      resources :locations, only: :index, path: 'lugares'
-      resources :mentions, only: :index, path: 'mencoes'
-      resources :metrics, only: :index, path: 'numeros'
-      resources :mining, only: :index, path: 'resumo'
-      resources :dashboard, only: :index, path: 'classificar' do
+      resources :languages, only: :index
+      resources :locations, only: :index
+      resources :mentions, only: :index
+      resources :metrics, only: :index
+      resources :mining, only: :index
+      resources :dashboard, only: :index do
         member do
           patch :classify
         end
       end
       resources :tweets, only: :index
-      resources :users, only: :index, path: 'usuarios'
+      resources :users, only: :index
       resources :validate, only: %w[index update]
       resources :links, only: :index do
         member do
@@ -56,7 +56,6 @@ Rails.application.routes.draw do
 
   resources :home, only: :index
   resources :sample, only: :create
-  resources :example, only: :index
   resources :contacts, only: %w[index new create] do
     collection do
       get :success

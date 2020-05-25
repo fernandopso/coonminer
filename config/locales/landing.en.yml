@@ -1,22 +1,23 @@
 en:
   landing:
-    title: Análise de dados em tempo real no Twitter
+    title: Real-time data analysis on Twitter
+    example: Example
     tokens: Pré candidatos a presidência do Brasil
     subtitle: "%{amount} tweets analisados sobre %{token}"
-    how_classify: "Como você classifica o tweet sobre %{token}?"
+    how_classify: "How do you rate the tweet about %{token}?"
     search: Buscar
-    mining: O que você quer analisar no Twitter?
+    mining: What do you want to analyze? Use
 
     newsletter:
-      subtitle: Receba análises por email sobre %{word}
-      create: Inscrever
+      subtitle: Receive email analysis about %{word}
+      create: Subscribe
 
     answer:
-      negative: Não apoia
-      neutral: Não expressa opinião
-      positive: Apoia
+      negative: Negative
+      neutral: Neutral
+      positive: Positive
 
     details:
-      positive: "%{amout} positivo"
-      neutral: "%{amout} neutro"
-      negative: "%{amout} negativo"
+      positive: "%{amout} positive"
+      neutral: "%{amout} neutral"
+      negative: "%{amout} negative"

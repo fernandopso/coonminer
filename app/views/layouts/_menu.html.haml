@@ -1,50 +1,31 @@
-.text-center
-  = link_to token_mining_index_path(params[:token_id]), class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-flash
-    = t('sidebar.mining')
-
-  = link_to token_tweets_path(params[:token_id]),    class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-dashboard
-    = Tweet.model_name.human
-
-  = link_to token_locations_path(params[:token_id]), class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-globe
-    = Location.model_name.human
-
-  = link_to token_hashtags_path(params[:token_id]),  class: 'btn btn-default home-button' do
-    %i #
-    = Hashtag.model_name.human
-
-  = link_to token_mentions_path(params[:token_id]),  class: 'btn btn-default home-button' do
-    %i @
-    = Mention.model_name.human
-
-  = link_to token_languages_path(params[:token_id]), class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-font
-    = Language.model_name.human
-
-  = link_to token_links_path(params[:token_id]),     class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-link
-    = Link.model_name.human
-
-  = link_to token_users_path(params[:token_id]),     class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-user
-    = t('sidebar.users')
-
-  = link_to token_dashboard_index_path(params[:token_id]), class: 'btn btn-default home-button' do
-    %i.glyphicon.glyphicon-dashboard
-    = t('sidebar.classify')
-
-%br
-
-- if user_signed_in? && current_user.owner?(params[:token_id])
-  .text-center
-    = link_to token_collect_index_path(params[:token_id]),  class: 'btn btn-default home-button' do
-      = t('sidebar.collect')
-    = link_to token_words_path(params[:token_id]),          class: 'btn btn-default home-button' do
-      = t('sidebar.words')
-    = link_to token_classify_index_path(params[:token_id]), class: 'btn btn-default home-button' do
-      = t('sidebar.classify')
-    = link_to token_validate_index_path(params[:token_id]), class: 'btn btn-default home-button' do
-      = t('sidebar.validate')
-  %br
+%nav.menu
+  %input#menu-open.menu-open{href: "#", name: "menu-open", type: "checkbox", checked: controller_name != 'tweets'}
+  %label.menu-open-button{:for => "menu-open"}
+    - if controller_name == 'tweets'
+      %i.menu-icon-active.glyphicon.glyphicon-dashboard
+    - elsif controller_name == 'locations'
+      %i.glyphicon.glyphicon-globe.menu-icon-active
+    - elsif controller_name == 'hashtags'
+      %i.menu-icon-active #
+    - elsif controller_name == 'mentions'
+      %i.menu-icon-active @
+    - elsif controller_name == 'languages'
+      %i.menu-icon-active.glyphicon.glyphicon-font
+    - elsif controller_name == 'links'
+      %i.menu-icon-active.glyphicon.glyphicon-link
+    - elsif controller_name == 'users'
+      %i.menu-icon-active.glyphicon.glyphicon-user
+  = link_to token_tweets_path(params[:token_id]), class: 'menu-item' do
+    %i.glyphicon.glyphicon-dashboard{ class: "#{'menu-icon-active' if controller_name == 'tweets'}" }
+  = link_to token_locations_path(params[:token_id]), class: 'menu-item' do
+    %i.glyphicon.glyphicon-globe{ class: "#{'menu-icon-active' if controller_name == 'locations'}" }
+  = link_to token_hashtags_path(params[:token_id]), class: 'menu-item' do
+    %i{ class: "#{'menu-icon-active' if controller_name == 'hashtags'}" } #
+  = link_to token_mentions_path(params[:token_id]), class: 'menu-item' do
+    %i{ class: "#{'menu-icon-active' if controller_name == 'mentions'}" } @
+  = link_to token_languages_path(params[:token_id]), class: 'menu-item' do
+    %i.glyphicon.glyphicon-font{ class: "#{'menu-icon-active' if controller_name == 'languages'}" }
+  = link_to token_links_path(params[:token_id]), class: 'menu-item' do
+    %i.glyphicon.glyphicon-link{ class: "#{'menu-icon-active' if controller_name == 'links'}" }
+  = link_to token_users_path(params[:token_id]), class: 'menu-item' do
+    %i.glyphicon.glyphicon-user{ class: "#{'menu-icon-active' if controller_name == 'users'}" }
