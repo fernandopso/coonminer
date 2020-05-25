@@ -52,6 +52,9 @@
 	font-size: 15px;
 	margin-top: 10px;
 }
+.menu-icon-active {
+	color: #1fa1f2;
+}
 .menu-classify {
 	background: #021427;
 	margin-left: -45px;
@@ -80,30 +83,34 @@
 	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .menu-open:checked~.menu-item:nth-child(3) {
-	transition-duration: 190ms;
-	transform: translate3d(60px, 0, 0);
+	transition-duration: 100ms;
+	transform: translate3d(50px, 0, 0);
 }
 .menu-open:checked~.menu-item:nth-child(4) {
-	transition-duration: 290ms;
-	transform: translate3d(120px, 0, 0);
+	transition-duration: 200ms;
+	transform: translate3d(100px, 0, 0);
 }
 .menu-open:checked~.menu-item:nth-child(5) {
-	transition-duration: 390ms;
-	transform: translate3d(180px, 0, 0);
+	transition-duration: 300ms;
+	transform: translate3d(150px, 0, 0);
 }
 .menu-open:checked~.menu-item:nth-child(6) {
-	transition-duration: 490ms;
-	transform: translate3d(240px, 0, 0);
+	transition-duration: 400ms;
+	transform: translate3d(200px, 0, 0);
 }
 .menu-open:checked~.menu-item:nth-child(7) {
-	transition-duration: 490ms;
-	transform: translate3d(300px, 0, 0);
+	transition-duration: 400ms;
+	transform: translate3d(250px, 0, 0);
 }
 .menu-open:checked~.menu-item:nth-child(8) {
-	transition-duration: 490ms;
-	transform: translate3d(360px, 0, 0);
+	transition-duration: 400ms;
+	transform: translate3d(300px, 0, 0);
 }
 .menu-open:checked~.menu-item:nth-child(9) {
-	transition-duration: 490ms;
-	transform: translate3d(420px, 0, 0);
+	transition-duration: 400ms;
+	transform: translate3d(350px, 0, 0);
+}
+.menu-open:checked~.menu-item:nth-child(10) {
+	transition-duration: 500ms;
+	transform: translate3d(400px, 0, 0);
 }

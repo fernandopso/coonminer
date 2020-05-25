@@ -1,20 +1,35 @@
 %nav.menu
   %input#menu-open.menu-open{href: "#", name: "menu-open", type: "checkbox"}
   %label.menu-open-button{:for => "menu-open"}
-    %span.hamburger.hamburger-1
-    %span.hamburger.hamburger-2
-    %span.hamburger.hamburger-3
+    - if controller_name == 'mining'
+      %i.glyphicon.glyphicon-star.menu-icon-active
+    - elsif controller_name == 'locations'
+      %i.glyphicon.glyphicon-globe.menu-icon-active
+    - elsif controller_name == 'hashtags'
+      %i.menu-icon-active #
+    - elsif controller_name == 'mentions'
+      %i.menu-icon-active @
+    - elsif controller_name == 'languages'
+      %i.menu-icon-active.glyphicon.glyphicon-font
+    - elsif controller_name == 'links'
+      %i.menu-icon-active.glyphicon.glyphicon-link
+    - elsif controller_name == 'users'
+      %i.menu-icon-active.glyphicon.glyphicon-user
+    - elsif controller_name == 'tweets'
+      %i.menu-icon-active.glyphicon.glyphicon-dashboard
+  = link_to token_mining_index_path(params[:token_id]), class: 'menu-item' do
+    %i.glyphicon.glyphicon-star{ class: "#{'menu-icon-active' if controller_name == 'mining'}" }
   = link_to token_tweets_path(params[:token_id]), class: 'menu-item' do
-    %i.glyphicon.glyphicon-dashboard
+    %i.glyphicon.glyphicon-dashboard{ class: "#{'menu-icon-active' if controller_name == 'tweets'}" }
   = link_to token_locations_path(params[:token_id]), class: 'menu-item' do
-    %i.glyphicon.glyphicon-globe
+    %i.glyphicon.glyphicon-globe{ class: "#{'menu-icon-active' if controller_name == 'locations'}" }
   = link_to token_hashtags_path(params[:token_id]), class: 'menu-item' do
-    %i #
+    %i{ class: "#{'menu-icon-active' if controller_name == 'hashtags'}" } #
   = link_to token_mentions_path(params[:token_id]), class: 'menu-item' do
-    %i @
+    %i{ class: "#{'menu-icon-active' if controller_name == 'mentions'}" } @
   = link_to token_languages_path(params[:token_id]), class: 'menu-item' do
-    %i.glyphicon.glyphicon-font
+    %i.glyphicon.glyphicon-font{ class: "#{'menu-icon-active' if controller_name == 'languages'}" }
   = link_to token_links_path(params[:token_id]), class: 'menu-item' do
-    %i.glyphicon.glyphicon-link
+    %i.glyphicon.glyphicon-link{ class: "#{'menu-icon-active' if controller_name == 'links'}" }
   = link_to token_users_path(params[:token_id]), class: 'menu-item' do
-    %i.glyphicon.glyphicon-user
+    %i.glyphicon.glyphicon-user{ class: "#{'menu-icon-active' if controller_name == 'users'}" }

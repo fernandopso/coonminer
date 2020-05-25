@@ -7,15 +7,15 @@
   .col-sm-12
     .panel.panel-default
       .panel-body.text-center.small
-        .col-xs-1
+        .col-xs-3
           %h5= amount
           = model_name
-        .col-xs-1
+        .col-xs-3
           %h5= token.metric.amount_rated
           = t('tokens.accuracy.rated')
-        .col-xs-1
+        .col-xs-3
           %h5= token.metric.user_validate
           = t('tokens.accuracy.validade')
-        .col-xs-1
+        .col-xs-3
           %h5= token.accuracy_human || '-'
           = t('tokens.accuracy.title')
