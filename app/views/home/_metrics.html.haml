@@ -1,0 +1,33 @@
+.text-center
+  %h3= t('landing.example')
+
+- @tokens.each do |token|
+  .row
+    = link_to token_tweets_path(token.uuid) do
+      .col-sm-12
+        .panel.panel-default
+          .panel-body.text-center.small
+            .col-xs-3.col-sm-1
+              %h3
+                .small= token.word
+            .col-xs-3.col-sm-1
+              %h5= token.metric.tweets
+              tweets
+            .col-xs-3.col-sm-1
+              %h5= token.metric.locations
+              locations
+            .col-xs-3.col-sm-1
+              %h5= token.metric.hashtags
+              hashtags
+            .col-xs-3.col-sm-1
+              %h5= token.metric.mentions
+              mentions
+            .col-xs-3.col-sm-1
+              %h5= token.metric.languages
+              languages
+            .col-xs-3.col-sm-1
+              %h5= token.metric.links
+              links
+            .col-xs-3.col-sm-1
+              %h5= token.metric.users
+              users

@@ -8,8 +8,11 @@
     .panel.panel-default
       .panel-body.text-center.small
         .col-xs-3.col-sm-1
+          %h3
+            .small= token.word
+        .col-xs-3.col-sm-1
           %h5= token.metric.tweets
-          %b tweets
+          tweets
         .col-xs-3.col-sm-1
           %h5= token.metric.locations
           locations
