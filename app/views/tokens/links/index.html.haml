@@ -4,8 +4,4 @@
     #chart_xs.hidden-sm.hidden-md.hidden-lg
     = render partial: 'links', locals: { links: @links }
 
-  .col-sm-7.hidden-xs
-    = render partial: 'tokens/tweets/accuracy', locals: { token: @token, amount: @links.count, model_name: Link.model_name.human }
-    #chart
-
 = render partial: 'charts/pie', locals: { options: @chart_options }

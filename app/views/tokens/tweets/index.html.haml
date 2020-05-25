@@ -1,8 +1,7 @@
 .row
   .col-xs-12.col-sm-5
     = render partial: 'filter'
-  .col-xs-12.col-sm-7
-    = render partial: 'accuracy', locals: { amount: @tweets.count, token: @token, model_name: Tweet.model_name.human }
+
 .row
   .col-xs-12.col-sm-5
     #user_chart_xs.hidden-sm.hidden-md.hidden-lg

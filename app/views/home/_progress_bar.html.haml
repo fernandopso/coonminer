@@ -1,7 +1,15 @@
+.text-center
+  %h3= t('landing.example')
+%p
+  %h4
+    Analyzed term:
+    = link_to token_tweets_path(@token.uuid) do
+      %b= @token.word
+%p= "#{@token.metric.amount} tweets collected in the last 7 days"
 .progress
-  .progress-bar.progress-bar-success{:style => "width: #{token.metric.percent_positive.to_i}%"}
-    %span.sr-only
-  .progress-bar.progress-bar-warning.progress-bar-striped{:style => "width: #{token.metric.percent_neutral.to_i}%"}
-    %span.sr-only
-  .progress-bar.progress-bar-danger{:style => "width: #{token.metric.percent_negative.to_i}%"}
-    %span.sr-only
+  .progress-bar.progress-bar-last-12-hours{:style => "width:20%"}
+    %span= "#{@token.metric.last_12_hours} tweets em 12h"
+  .progress-bar.progress-bar-last-24-hours{:style => "width: 35%"}
+    %span= "#{@token.metric.last_24_hours} tweets em 24h"
+  .progress-bar.progress-bar-last-72-hours{:style => "width: 45%"}
+    %span= "#{@token.metric.last_3_days} tweets em 72 hours"

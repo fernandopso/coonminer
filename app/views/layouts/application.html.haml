@@ -14,7 +14,7 @@
   %body
     .container-fluid.margin-header
       = render partial: 'layouts/navbar'
-      = render partial: 'layouts/menu' if @token.present?
+      = render partial: 'tokens/tweets/accuracy', locals: { token: @token, amount: 0, model_name: Link.model_name.human } if @token.present?
       = yield :header
       = render partial: 'layouts/notice_alert_message', locals: { message: notice || alert }
       = yield
