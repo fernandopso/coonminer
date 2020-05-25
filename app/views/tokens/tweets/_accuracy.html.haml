@@ -7,21 +7,24 @@
   .col-sm-12
     .panel.panel-default
       .panel-body.text-center.small
-        .col-xs-3
-          %h5
-            - if controller_name == 'tweets'
-              = @tweets.count
-            - elsif controller_name == 'users'
-              =  @users.count
-            - else
-              = @chart_options.count
-          %b= controller_name
-        .col-xs-3
-          %h5= token.metric.amount_rated
-          = t('tokens.accuracy.rated')
-        .col-xs-3
-          %h5= token.metric.user_validate
-          = t('tokens.accuracy.validade')
-        .col-xs-3
-          %h5= token.accuracy_human || '-'
-          = t('tokens.accuracy.title')
+        .col-xs-3.col-sm-1
+          %h5= token.metric.tweets
+          %b tweets
+        .col-xs-3.col-sm-1
+          %h5= token.metric.locations
+          locations
+        .col-xs-3.col-sm-1
+          %h5= token.metric.hashtags
+          hashtags
+        .col-xs-3.col-sm-1
+          %h5= token.metric.mentions
+          mentions
+        .col-xs-3.col-sm-1
+          %h5= token.metric.languages
+          languages
+        .col-xs-3.col-sm-1
+          %h5= token.metric.links
+          links
+        .col-xs-3.col-sm-1
+          %h5= token.metric.users
+          users

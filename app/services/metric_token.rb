@@ -23,6 +23,13 @@ class MetricToken
     last_24_hours
     last_3_days
     last_7_days
+    tweets
+    locations
+    hashtags
+    mentions
+    languages
+    links
+    users
   ]
 
   attr_accessor :token, :metric
@@ -46,6 +53,34 @@ class MetricToken
     token.tweets.count
   end
 
+  def tweets
+    token.tweets.count
+  end
+
+  def locations
+    token.locations.count
+  end
+
+  def hashtags
+    token.hashtags.count
+  end
+
+  def mentions
+    token.mentions.count
+  end
+
+  def languages
+    token.languages.count
+  end
+
+  def links
+    token.links.count
+  end
+
+  def users
+    token.profiles.count
+  end
+
   def user_rated
     token.tweets.user_rated.count
   end
@@ -63,19 +98,19 @@ class MetricToken
   end
 
   def svm_rated
-    token.tweets.svm_rated.count
+    token.tweets.coonminer_rated.count
   end
 
   def svm_rated_positive
-    token.tweets.svm_rated.svm_positive.count
+    token.tweets.coonminer_rated.count
   end
 
   def svm_rated_neutral
-    token.tweets.svm_rated.svm_neutral.count
+    token.tweets.coonminer_rated.count
   end
 
   def svm_rated_negative
-    token.tweets.svm_rated.svm_negative.count
+    token.tweets.coonminer_rated.count
   end
 
   def user_validate

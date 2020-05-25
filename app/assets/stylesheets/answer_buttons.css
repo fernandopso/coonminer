@@ -17,7 +17,7 @@ a:hover , a:focus{
 .answer-btn {
     text-transform: uppercase;
     color: white;
-    font-size: 13px;
-    padding: 15px 40px;
+    font-size: 10px;
+    padding: 10px 10px;
     border-radius: 50px;
 }
