@@ -18,6 +18,7 @@ class Tweet < ActiveRecord::Base
   scope :user_negative, -> { where(rate: NEGATIVE) }
   scope :user_neutral, ->  { where(rate: NEUTRAL)  }
 
+  scope :coonminer_rated, ->  { where.not(rate_svm: nil) }
   scope :coonminer_unrated, ->  { where(rate_svm: nil) }
   scope :coonminer_positive, -> { where(rate_svm: POSITIVE) }
   scope :coonminer_negative, -> { where(rate_svm: NEGATIVE) }
