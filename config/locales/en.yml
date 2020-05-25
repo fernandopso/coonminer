@@ -1,6 +1,6 @@
 en:
   title: Coon Miner
-  title_for_token: "%{token} no Twitter"
+  title_for_token: "%{token} on Twitter"
   description: Machine learning and data mining for public tweets
   description_for_token: "%{token} on Twitter - Machine learning and data mining for public tweets"
   keywords: "twitter mining, tweets mining, data mining, machine learning"
